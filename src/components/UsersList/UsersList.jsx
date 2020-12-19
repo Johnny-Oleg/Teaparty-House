@@ -9,7 +9,7 @@ const UsersList = ({ users }) => {
             {users.map((item, index) => {
                 return (
                     <div key={item.id}>
-                        <User user={item} />
+                        {/* <User user={item} /> */}
                         {item.name}
                         {item.top.map(jrpg => {
                             return (
@@ -17,7 +17,7 @@ const UsersList = ({ users }) => {
                                     <li key={jrpg.id}>{jrpg.id + ': ' + jrpg.description?.title}</li>
                                     <img src={process.env.PUBLIC_URL + jrpg.description?.art} style={{width: "150px", height: "auto"}} />
                                     {/* <img src={require(jrpg.description.art)} alt="art" style={{width: "200px", height: "auto"}} /> */}
-                                    {console.log(jrpg.description?.art)}
+                                    {console.log(jrpg)}
                                 </>  
                             )
                         })}
