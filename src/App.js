@@ -2,30 +2,41 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import data from './database/users.json';
+import UserList from './components/UsersList/UsersList';
 import './App.css';
 
 const App = () => {
   const [users, setUsers] = useState([]);
 
-  const fetching = () => {
-    console.log(data.users);
-    setUsers(data.users);
-  }
+  useEffect(() => {
+    
+    // const handleClick = () => {
+    //   console.log(data.users, 'data.users');
+    //   setUsers(data.users);
+    // }
+  })
   
-  console.log(users);
+  const handleClick = () => {
+      console.log(data.users, 'data.users');
+      setUsers(data.users);
+  }
+
+  console.log(users, 'users');
+
+  if (!users) return <p>Loading, please wait...</p>;
 
   return (
     <div className="App">
-      <button onClick={fetching}></button>
-      {users.map((item, index) => {
-        return (
-          <li key={item.id}>
-            {item.name}
-          </li>
-        )
-      })}
+      <header>
+        <span>Teaparty House | ティーパーティーハウス</span>
+        <br/>
+        <span>Welcome, gentlemen! | ようこそ、殿方！</span>
+      </header>
+      <img src="images/4d641783190d277cdc89f75702bcce96.png" alt="sir"/>
+      <button onClick={handleClick}>Top 10</button>
+      <UserList users={users} />
     </div>
-  );
-};
+  )
+}
 
 export default App;
