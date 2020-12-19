@@ -9,6 +9,7 @@ const UsersList = ({ users }) => {
             {users.map((item, index) => {
                 return (
                     <div key={item.id}>
+                        <User user={item} />
                         {item.name}
                         {item.top.map(jrpg => {
                             return (
