@@ -1,20 +1,19 @@
 import React from 'react';
 
+import Jrpg from '../Jrpg/Jrpg';
+
 const User = ({ name, avatar, id, top }) => {
-    console.log(name, top);
+    //console.log(name);
     return (
-        <div>
-            <li>{name}</li>
-            {/* {top.map(jrpg => {
-                return (
-                    <>
-                        <li key={jrpg.id}>{jrpg.id + ': ' + jrpg.description?.title}</li>
-                        <img src={process.env.PUBLIC_URL + jrpg.description?.art} style={{width: "150px", height: "auto"}} />
-                        {console.log(jrpg.description?.art)}
-                    </>  
-                )
-            })} */}
-        </div>
+        <>
+            <li style={{color: 'black', fontSize: '24px'}}>{name}</li>
+            <img 
+                src={process.env.PUBLIC_URL + avatar} 
+                style={{border: '3px solid black'}} 
+                alt="avatar"
+            />
+            {top.map(jrpg => <ul key={id}><Jrpg {...jrpg} /></ul>)}
+        </>
     )
 };
 

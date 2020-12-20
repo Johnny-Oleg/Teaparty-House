@@ -1,25 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 import data from './database/users.json';
 import UserList from './components/UsersList/UsersList';
 import './App.css';
 
+// var init = {
+//   method: 'GET',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   mode: 'cors',
+//   cache: 'default'
+// }
+
+//let REQUEST = new Request('http://localhost:8080/users.json', init);
+
 const App = () => {
   const [users, setUsers] = useState([]);
+  const [visibleList, setVisible] = useState(false);
 
   useEffect(() => {
-    
-    // const handleClick = () => {
-    //   console.log(data.users, 'data.users');
-    //   setUsers(data.users);
-    // }
-  })
+    setUsers(data.users);
+
+    console.log(users, 'hook');
+    console.log('Component did mount');
+
+    return () => console.log('Component did update');
+  }, [users])
+  //useEffect(() => {
+    // fetch(REQUEST)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //       //setUsers(data.users);
+
+    //       console.log(data, 'hook');
+    //       console.log('Component did mount');
+    //   });
+
+    //return () => console.log('Component did update');
+  //}, [])
   
   const handleClick = () => {
-      console.log(data.users, 'data.users');
-      setUsers(data.users);
+      console.log(users, 'data.users');
+      setVisible(visible => !visible);
+      // setUsers(data.users);
   }
+
+  // const toggleVisibleList = () => {
+  //   setVisible(visible => !visible);
+  //   console.log(visibleList);
+  // }
 
   console.log(users, 'users');
 
@@ -34,7 +65,7 @@ const App = () => {
       </header>
       <img src="images/4d641783190d277cdc89f75702bcce96.png" alt="sir"/>
       <button onClick={handleClick}>Top 10</button>
-      <UserList users={users} />
+      {visibleList && <UserList users={users} />}
     </div>
   )
 }
