@@ -6,7 +6,7 @@ const UsersList = ({ users }) => {
     console.log(users);
     return (
         <div>
-            {users.map((item, index) => <ul key={item.id}><User {...item} /></ul>)}
+            {users.map((item, index) => <User key={item.id} {...item} />)}
         </div>
     )
 }

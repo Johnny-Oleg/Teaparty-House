@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>
+      <header className="App-header">
         <span>Teaparty House | ティーパーティーハウス</span>
         <br/>
         <span>Welcome, gentlemen! | ようこそ、殿方！</span>

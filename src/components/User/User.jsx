@@ -12,7 +12,9 @@ const User = ({ name, avatar, id, top }) => {
                 style={{border: '3px solid black'}} 
                 alt="avatar"
             />
-            {top.map(jrpg => <ul key={id}><Jrpg {...jrpg} /></ul>)}
+            <ul>
+                {top.map(jrpg => <Jrpg key={id} {...jrpg} />)}
+            </ul>
         </>
     )
 };
