@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 
 import data from './database/users.json';
 import UserList from './components/UsersList/UsersList';
+import Form from './components/Form/Form';
+import UsersOnline from './components/UsersOnline/UsersOnline';
+import Widgets from './components/Widgets/Widgets';
+import Chat from './components/Chat/Chat';
 import './App.css';
 
 // var init = {
@@ -59,13 +63,26 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="logo">
+          <img src="./images/teaparty-house-logo.png" alt="logo"/>
+        </div>
         <span>Teaparty House | ティーパーティーハウス</span>
         <br/>
         <span>Welcome, gentlemen! | ようこそ、殿方！</span>
       </header>
-      <img src="images/4d641783190d277cdc89f75702bcce96.png" alt="sir"/>
-      <button onClick={handleClick}>Top 10</button>
-      {visibleList && <UserList users={users} />}
+      <div>
+        <img src="./images/Sire.png" alt="sir"/>
+        <button onClick={handleClick}>Top 10</button>
+      </div>
+      <div className="main">
+        <UsersOnline />
+        {visibleList && <UserList users={users} />}
+        <div className="sidebar">
+          <Form />
+          <Widgets />
+          <Chat />
+        </div>
+      </div>
     </div>
   )
 }

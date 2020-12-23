@@ -3,7 +3,7 @@ import React from 'react';
 import Jrpg from '../Jrpg/Jrpg';
 
 const User = ({ name, avatar, id, top }) => {
-    //console.log(name);
+    //console.log(id);
     return (
         <>
             <li style={{color: 'black', fontSize: '24px'}}>{name}</li>
@@ -13,7 +13,7 @@ const User = ({ name, avatar, id, top }) => {
                 alt="avatar"
             />
             <ul>
-                {top.map(jrpg => <Jrpg key={id} {...jrpg} />)}
+                {top.map(jrpg => <Jrpg key={jrpg.id} {...jrpg} />)}
             </ul>
         </>
     )
