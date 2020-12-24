@@ -1,0 +1,12 @@
+.user__list {
+    /* width: 600px; */
+    flex: 0.4;
+    min-width: fit-content;
+    overflow-y: scroll;
+    /* display: flex;
+    align-items: flex-start; */
+}
+
+.user__list::-webkit-scrollbar {
+    display: none;
+}

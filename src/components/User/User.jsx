@@ -5,7 +5,7 @@ import Jrpg from '../Jrpg/Jrpg';
 const User = ({ name, avatar, id, top }) => {
     //console.log(id);
     return (
-        <>
+        <div style={{borderBottom: '10px solid #1967D2'}}>
             <li style={{color: 'black', fontSize: '24px'}}>{name}</li>
             <img 
                 src={process.env.PUBLIC_URL + avatar} 
@@ -15,7 +15,7 @@ const User = ({ name, avatar, id, top }) => {
             <ul>
                 {top.map(jrpg => <Jrpg key={jrpg.id} {...jrpg} />)}
             </ul>
-        </>
+        </div>
     )
 };
 

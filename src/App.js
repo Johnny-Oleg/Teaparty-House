@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
 
 import data from './database/users.json';
-import UserList from './components/UsersList/UsersList';
+import UserList from './components/UserList/UserList';
 import Form from './components/Form/Form';
 import UsersOnline from './components/UsersOnline/UsersOnline';
 import Widgets from './components/Widgets/Widgets';

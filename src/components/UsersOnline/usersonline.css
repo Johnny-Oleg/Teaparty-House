@@ -1,0 +1,14 @@
+.users__online {
+    width: 300px;
+    border-right: 1px solid #97B9F2;
+    /* padding-left: 30px; */
+}
+
+.users__online-name {
+    color: #97B9F2; /*'#61dafb*/
+}
+
+.users__online-img {
+    width: 200px;
+    height: auto;
+}
