@@ -72,7 +72,7 @@ const App = () => {
       </header>
       <div>
         <img src="./images/Sire.png" alt="sir"/>
-        <button onClick={handleClick}>Top 10</button>
+        <button className="user-btn" onClick={handleClick}>Top 10</button>
       </div>
       <div className="main">
         <UsersOnline />

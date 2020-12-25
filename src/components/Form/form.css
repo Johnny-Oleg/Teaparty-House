@@ -1,0 +1,24 @@
+.form-top {
+    width: 300px;
+    height: 300px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    background-color: #25292c;
+}
+
+.form-top > h2 {
+    color: #ffff;
+}
+
+.form-top__input {
+    padding: 5px;
+}
+
+.form-top__btn {
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    background-color: #1967D2;
+    border-radius: 30px;
+}

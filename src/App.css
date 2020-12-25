@@ -65,9 +65,12 @@
   /* margin: 0 auto; */
 }
 
-button {
-  background-color: #E5E5E5;
-  color: #1967D2;
+.user-btn {
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    background-color: #1967D2;
+    border-radius: 30px;
 }
 
 ul, li {

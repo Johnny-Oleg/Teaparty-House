@@ -1,11 +1,16 @@
 import React from 'react';
 
+import './form.css';
+
 const Form = () => {
     return (
-        <form>
+        <div className="form-top">
             <h2>Add your Top 10 JRPG</h2>
-            <input type="text"/>
-        </form>
+            <form>
+                <input className="form-top__input" type="text"/>
+                <button className="form-top__btn">Submit</button>
+            </form>
+        </div>
     )
 }
 

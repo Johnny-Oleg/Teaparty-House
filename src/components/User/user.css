@@ -1,0 +1,22 @@
+.user {
+    border-bottom: 10px solid #1967D2;
+}
+
+.user__item {
+    color: black; 
+    font-size: 24px;
+}
+
+.user__img {
+    border: 3px solid black;
+}
+
+.user__btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* .user__btn:active {
+    background-color: red;
+} */

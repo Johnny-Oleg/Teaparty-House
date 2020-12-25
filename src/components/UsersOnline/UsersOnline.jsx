@@ -5,12 +5,15 @@ import './usersonline.css';
 const UsersOnline = () => {
     return (
         <div className="users__online">
-            <h2 className="users__online-name">User - 1</h2>
-            <img className="users__online-img" src="./images/user-demo.jpg" alt="user"/>
-            <h2 className="users__online-name">User - 2</h2>
-            <h2 className="users__online-name">User - 3</h2>
-            <h2 className="users__online-name">User - 4</h2>
-            <h2 className="users__online-name">User - 5</h2>
+            <h2>Users are online:</h2>
+            <h2 className="users__online-name">Skyer1st</h2>
+            <div className="users__online-img on">
+                <img className="users__online-img" src="./images/user-demo.jpg" alt="user"/>
+            </div>
+            <h2 className="users__online-name off">nindo</h2>
+            <h2 className="users__online-name off">Feenux</h2>
+            <h2 className="users__online-name off">Remain Nameless</h2>
+            <h2 className="users__online-name off">saramago</h2>
         </div>
     )
 };
