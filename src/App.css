@@ -42,6 +42,17 @@
   border-radius: 50px;
 }
 
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1000px;
+}
+
+.section > div {
+  flex-basis: 500px;
+}
+
 .main {
   display: flex;
   height: 100vh;

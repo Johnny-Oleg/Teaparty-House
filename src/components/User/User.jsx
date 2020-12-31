@@ -17,7 +17,9 @@ const User = ({ name, avatar, id, top }) => {
 
         !color.clicked && setColor({backgroundColor: 'red', clicked: true});
     }
+    
     console.log(counter, color.clicked, color.backgroundColor);
+
     return (
         <div className="user">
             <li className="user__item">{name}</li>
