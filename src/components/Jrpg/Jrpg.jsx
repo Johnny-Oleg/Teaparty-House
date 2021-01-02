@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Tilt from 'react-tilt';
 
 const Jrpg = ({ id, description }) => {
@@ -20,6 +21,11 @@ const Jrpg = ({ id, description }) => {
             </li>
         </>
     )
+}
+
+Jrpg.propTypes = {
+    id: PropTypes.string || PropTypes.number,
+    description: PropTypes.objectOf(PropTypes.string),
 }
 
 export default Jrpg;

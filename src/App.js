@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
 
 import data from './database/users.json';
+import JrpgOfTheDay from './components/JrpgOfTheDay/JrpgOfTheDay';
 import Player from './components/AudioPlayer/Player';
 import UserList from './components/UserList/UserList';
 import Form from './components/Form/Form';
@@ -9,10 +10,10 @@ import UsersOnline from './components/UsersOnline/UsersOnline';
 import Widgets from './components/Widgets/Widgets';
 import Chat from './components/Chat/Chat';
 import './App.css';
-//const track = './Butterfly Kiss.mp3';
+// const track = './Butterfly Kiss.mp3';
 import track from './Butterfly Kiss.mp3';
 
-const random = arr => arr[Math.floor(Math.random() * arr.length)];
+// const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
 // var init = {
 //   method: 'GET',
@@ -62,11 +63,6 @@ const App = () => {
   //   console.log(visibleList);
   // }
 
-  const jrpgList = users.map(user => user.top.map(item => item.description.title));
-  
-  const randomJrpg = random([...new Set(jrpgList.flat())]);
-
-  console.log(randomJrpg);
   console.log(users, 'users');
 
   if (!users) return <p>Loading, please wait...</p>;
@@ -82,7 +78,7 @@ const App = () => {
         <span>Welcome, gentlemen! | ようこそ、殿方！</span>
       </header>
       <div className="section">
-        <span>JRPG of the day: {randomJrpg}</span>
+        <JrpgOfTheDay users={users} />
         <Player track={track} />
         <img src="./images/Sire.png" alt="sir"/>
         <button className="user-btn" onClick={handleClick}>Top 10</button>
@@ -91,7 +87,7 @@ const App = () => {
         <UsersOnline />
         {visibleList && <UserList users={users} />}
         <div className="sidebar">
-          <Form />
+          <Form users={users} />
           <Widgets />
           <Chat />
         </div>

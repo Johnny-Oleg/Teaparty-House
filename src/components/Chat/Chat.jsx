@@ -4,7 +4,7 @@ const Chat = () => {
     return (
         <div>
             <h1>Chat</h1>
-            <input type="text" value="Type a message" />
+            <input type="text" value="" placeholder="type a message..." />
         </div>
     )
 }

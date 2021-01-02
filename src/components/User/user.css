@@ -12,9 +12,10 @@
 }
 
 .user__btn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 30%;
 }
 
 /* .user__btn:active {

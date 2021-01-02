@@ -3,16 +3,20 @@
     height: 300px;
     display: flex !important;
     flex-direction: column !important;
+    justify-content: center;
     align-items: center;
     background-color: #25292c;
 }
 
-.form-top > h2 {
+.form-top > label {
     color: #ffff;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 .form-top__input {
     padding: 5px;
+    margin-bottom: 5px;
 }
 
 .form-top__btn {
