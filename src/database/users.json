@@ -3,73 +3,73 @@
         {
             "name": "Neojiny",
             "avatar": "/images/avatars/neojiny-avatar.gif",
-            "id": "1",
+            "id": 1,
             "top": [
                 {
-                    "id": "1",
+                    "id": 1,
                     "description": {
                         "title": "Final Fantasy X",
                         "art": "/images/jrpg/ff10.jpg"
                     }
                 },
                 {
-                    "id": "2",
+                    "id": 2,
                     "description": {
                         "title": "Persona 2: Innocent Sin",
                         "art": "/images/jrpg/p2is.jpg"
                     }
                 },
                 {
-                    "id": "3",
+                    "id": 3,
                     "description": {
                         "title": "Final Fantasy XII",
                         "art": "/images/jrpg/ff12.jpg"
                     }
                 },
                 {
-                    "id": "4",
+                    "id": 4,
                     "description": {
                         "title": "Dragon Quest VIII: Journey of the Cursed King",
                         "art": "/images/jrpg/dq8.jpeg"
                     }
                 },
                 {
-                    "id": "5",
+                    "id": 5,
                     "description": {
                         "title": "Kingdom Hearts",
                         "art": "/images/jrpg/kh1.jpg"
                     }
                 },
                 {
-                    "id": "6",
+                    "id": 6,
                     "description": {
                         "title": "Blue Dragon",
                         "art": "/images/jrpg/bd.jpg"
                     }
                 },
                 {
-                    "id": "7",
+                    "id": 7,
                     "description": {
                         "title": "Final Fantasy Tactics Advance",
                         "art": "/images/jrpg/ffta.jpg"
                     }
                 },
                 {
-                    "id": "8",
+                    "id": 8,
                     "description": {
                         "title": "Shin Megami Tensei: Strange Journey",
                         "art": "/images/jrpg/smtsj.jpg"
                     }
                 },
                 {
-                    "id": "9",
+                    "id": 9,
                     "description": {
                         "title": "Dark Souls",
                         "art": "/images/jrpg/ds.jpg"
                     }
                 },
                 {
-                    "id": "10",
+                    "id": 10,
                     "description": {
                         "title": "Phantasy Star II",
                         "art": "/images/jrpg/ps2.jpg"
@@ -80,73 +80,73 @@
         {
             "name": "OkaRin",
             "avatar": "/images/avatars/okarin-avatar.jpg",
-            "id": "2",
+            "id": 2,
             "top": [
                 {
-                    "id": "1",
+                    "id": 1,
                     "description": {
                         "title": "Final Fantasy IX",
                         "art": "/images/jrpg/ff9.jpg"
                     }
                 },
                 {
-                    "id": "2",
+                    "id": 2,
                     "description": {
                         "title": "Final Fantasy X",
                         "art": "/images/jrpg/ff10.jpg"
                     }
                 },
                 {
-                    "id": "3",
+                    "id": 3,
                     "description": {
                         "title": "Final Fantasy XII",
                         "art": "/images/jrpg/ff12.jpg"
                     }
                 },
                 {
-                    "id": "4",
+                    "id": 4,
                     "description": {
-                        "title": "Dragon Quest VIII: Journey of the Cursed King",
-                        "art": "/images/jrpg/dq8.jpeg"
+                        "title": "Dragon Quest XI: Echoes of an Elusive Age",
+                        "art": "/images/jrpg/dq11.jpg"
                     }
                 },
                 {
-                    "id": "5",
+                    "id": 5,
                     "description": {
                         "title": "Chrono Trigger",
                         "art": "/images/jrpg/ct.jpg"
                     }
                 },
                 {
-                    "id": "6",
+                    "id": 6,
                     "description": {
                         "title": "Kingdom Hearts II",
                         "art": "/images/jrpg/kh2.jpg"
                     }
                 },
                 {
-                    "id": "7",
+                    "id": 7,
                     "description": {
                         "title": "Blue Dragon",
                         "art": "/images/jrpg/bd.jpg"
                     }
                 },
                 {
-                    "id": "8",
+                    "id": 8,
                     "description": {
                         "title": "Persona 5",
                         "art": "/images/jrpg/p5.png"
                     }
                 },
                 {
-                    "id": "9",
+                    "id": 9,
                     "description": {
                         "title": "Breath of Fire IV",
                         "art": "/images/jrpg/bof4.png"
                     }
                 },
                 {
-                    "id": "10",
+                    "id": 10,
                     "description": {
                         "title": "Tales of Vesperia",
                         "art": "/images/jrpg/tov.jpg"
@@ -157,73 +157,73 @@
         {
             "name": "Ayreon",
             "avatar": "/images/avatars/ayreon-avatar.png",
-            "id": "3",
+            "id": 3,
             "top": [
                 {
-                    "id": "1",
+                    "id": 1,
                     "description": {
                         "title": "Final Fantasy VII",
                         "art": "/images/jrpg/ff7.jpg"
                     }
                 },
                 {
-                    "id": "2",
+                    "id": 2,
                     "description": {
                         "title": "Final Fantasy Tactics",
                         "art": "/images/jrpg/fft.jpg"
                     }
                 },
                 {
-                    "id": "3",
+                    "id": 3,
                     "description": {
                         "title": "Final Fantasy X",
                         "art": "/images/jrpg/ff10.jpg"
                     }
                 },
                 {
-                    "id": "4",
+                    "id": 4,
                     "description": {
                         "title": "Final Fantasy IX",
                         "art": "/images/jrpg/ff9.jpg"
                     }
                 },
                 {
-                    "id": "5",
+                    "id": 5,
                     "description": {
                         "title": "Dragon Quest VIII: Journey of the Cursed King",
                         "art": "/images/jrpg/dq8.jpeg"
                     }
                 },
                 {
-                    "id": "6",
+                    "id": 6,
                     "description": {
                         "title": "Kingdom Hearts",
                         "art": "/images/jrpg/kh1.jpg"
                     }
                 },
                 {
-                    "id": "7",
+                    "id": 7,
                     "description": {
                         "title": "Chrono Trigger",
                         "art": "/images/jrpg/ct.jpg"
                     }
                 },
                 {
-                    "id": "8",
+                    "id": 8,
                     "description": {
                         "title": "Lunar: Silver Star Story Complete",
                         "art": "/images/jrpg/lsssc.jpg"
                     }
                 },
                 {
-                    "id": "9",
+                    "id": 9,
                     "description": {
                         "title": "Star Ocean 2: The Second Story",
                         "art": "/images/jrpg/so2.jpg"
                     }
                 },
                 {
-                    "id": "10",
+                    "id": 10,
                     "description": {
                         "title": "Suikoden II",
                         "art": "/images/jrpg/s2.jpg"
@@ -235,73 +235,73 @@
         {
             "name": "gerogeri",
             "avatar": "/images/avatars/gerogeri-avatar.jpg",
-            "id": "4",
+            "id": 4,
             "top": [
                 {
-                    "id": "1",
+                    "id": 1,
                     "description": {
                         "title": "Final Fantasy XII",
                         "art": "/images/jrpg/ff12.jpg"
                     }
                 },
                 {
-                    "id": "2",
+                    "id": 2,
                     "description": {
                         "title": "Vagrant Story",
                         "art": "/images/jrpg/vs.jpg"
                     }
                 },
                 {
-                    "id": "3",
+                    "id": 3,
                     "description": {
                         "title": "Persona 2: Eternal Punishment",
                         "art": "/images/jrpg/p2ep.jpg"
                     }
                 },
                 {
-                    "id": "4",
+                    "id": 4,
                     "description": {
                         "title": "Lunar 2: Eternal Blue Complete",
                         "art": "/images/jrpg/l2ebc.jpg"
                     }
                 },
                 {
-                    "id": "5",
+                    "id": 5,
                     "description": {
                         "title": "Dragon Quest VII: Warriors of Eden",
                         "art": "/images/jrpg/dq7.jpg"
                     }
                 },
                 {
-                    "id": "6",
+                    "id": 6,
                     "description": {
                         "title": "Xenogears",
                         "art": "/images/jrpg/xg.jpg"
                     }
                 },
                 {
-                    "id": "7",
+                    "id": 7,
                     "description": {
                         "title": "Tactics Ogre: Let Us Cling Together",
                         "art": "/images/jrpg/to.jpg"
                     }
                 },
                 {
-                    "id": "8",
+                    "id": 8,
                     "description": {
                         "title": "Valkyrie Profile",
                         "art": "/images/jrpg/vp.jpg"
                     }
                 },
                 {
-                    "id": "9",
+                    "id": 9,
                     "description": {
                         "title": "Parasite Eve",
                         "art": "/images/jrpg/pe.png"
                     }
                 },
                 {
-                    "id": "10",
+                    "id": 10,
                     "description": {
                         "title": "Resonance of Fate",
                         "art": "/images/jrpg/rof.jpg"

@@ -37,7 +37,7 @@ const App = () => {
     console.log('Component did mount');
 
     return () => console.log('Component did update');
-  }, [users])
+  }, [data.users])
   
   //useEffect(() => {
     // fetch(REQUEST)
@@ -58,12 +58,17 @@ const App = () => {
       // setUsers(data.users);
   }
 
+  const updateState = newUser => {
+      setUsers([...users, newUser]);
+      console.log(newUser, users, 'updated');
+  }
+  
   // const toggleVisibleList = () => {
   //   setVisible(visible => !visible);
   //   console.log(visibleList);
   // }
 
-  console.log(users, 'users');
+  console.log(users, 'users'); //!
 
   if (!users) return <p>Loading, please wait...</p>;
 
@@ -87,7 +92,7 @@ const App = () => {
         <UsersOnline />
         {visibleList && <UserList users={users} />}
         <div className="sidebar">
-          <Form users={users} />
+          <Form /* users={users} */ updateState={updateState} />
           <Widgets />
           <Chat />
         </div>

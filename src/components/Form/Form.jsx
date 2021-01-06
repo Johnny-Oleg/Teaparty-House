@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './form.css';
 
-const Form = ({ users }) => {
+const Form = ({ /* users, */ updateState }) => {//!
     const [newUser, setNewUser] = useState({
         name: '',
         avatar: '',
@@ -19,10 +19,10 @@ const Form = ({ users }) => {
             }
         ],
     });
-
+// console.log(updateState);
     // const [userAvatar, setUserAvatar] = useState('');
 
-    console.log(users);
+    // console.log(users);//!
 
     const handleChange = ({ target: { value } }) => {
         setNewUser({
@@ -45,17 +45,12 @@ const Form = ({ users }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        
-        // console.log(newUser, userAvatar);
     }
 
     useEffect(() => {
-        console.log(newUser, '->', usersArr);
+        console.log(newUser, '->', /* usersArr */);
     }, [newUser])
     // console.log(newUser);
-
-    let usersArr = [...users, newUser];
-    console.log(usersArr); 
 
     return (
         <div className="form-top">
@@ -78,14 +73,14 @@ const Form = ({ users }) => {
                     onChange={handleChange}
                 /> */}
                 <br/>
-                <button className="form-top__btn" type="submit">Submit</button>
+                <button className="form-top__btn" type="submit" onClick={() => updateState(newUser)}>Submit</button>
             </form>
         </div>
     )
 }
 
 Form.propTypes = {
-    users: PropTypes.object,
+    updateState: PropTypes.func.isRequired,
 }
 
 export default Form;
