@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
 
 import data from './database/users.json';
+
+import Header from './components/Header/Header';
 import JrpgOfTheDay from './components/JrpgOfTheDay/JrpgOfTheDay';
 import Player from './components/AudioPlayer/Player';
 import UserList from './components/UserList/UserList';
@@ -74,19 +76,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="logo">
-          <img src="./images/teaparty-house-logo.png" alt="logo"/>
-        </div>
-        <span>Teaparty House | ティーパーティーハウス</span>
-        <br/>
-        <span>Welcome, gentlemen! | ようこそ、殿方！</span>
-      </header>
+      <Header />
       <div className="section">
         <JrpgOfTheDay users={users} />
         <Player track={track} />
         <img src="./images/Sire.png" alt="sir"/>
-        <button className="user-btn" onClick={handleClick}>Top 10</button>
+        <button className="user-btn" onClick={handleClick}>Show Users</button>
       </div>
       <div className="main">
         <UsersOnline />

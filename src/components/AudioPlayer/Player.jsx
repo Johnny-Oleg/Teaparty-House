@@ -62,17 +62,19 @@ import track from '../../Butterfly Kiss.mp3';
 // }
 
 const Player = () => {
+    const [playing, setPlaying] = useState(false);
     const audio = useRef(track);
 
     const toggle = () => {
         audio.current.paused ? audio.current.play() : audio.current.pause();
-        console.log(audio.current.paused);
+        setPlaying(!playing);
+        console.log(audio.current.paused, playing);
     }
 
     return (
         <div>
             <audio ref={audio} src={track} type="audio/mpeg" preload="auto" autoplay loop></audio>
-            <button onClick={toggle}>{audio.current.paused ? 'Play' : 'Pause'}</button>
+            <button onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
         </div>
     )
 }

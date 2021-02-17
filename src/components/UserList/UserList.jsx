@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import FlipMove from 'react-flip-move';
 
 import User from '../User/User';
-import './userlist.css';
+import './Userlist.css';
 
 const UserList = ({ users }) => {
     console.log(users);

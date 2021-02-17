@@ -3,8 +3,10 @@
     flex: 0.4;
     min-width: fit-content;
     overflow-y: scroll;
-    /* display: flex;
-    align-items: flex-start; */
+    /* align-items: center;
+    display: flex;
+    flex-direction: column; */
+    /* align-items: flex-start; */
 }
 
 .user__list::-webkit-scrollbar {

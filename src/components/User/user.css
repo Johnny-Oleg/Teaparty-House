@@ -18,6 +18,12 @@
     border-radius: 30%;
 }
 
+.item__List {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* .user__btn:active {
     background-color: red;
 } */

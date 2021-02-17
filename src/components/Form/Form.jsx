@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import './form.css';
+import './Form.css';
 
 const Form = ({ /* users, */ updateState }) => {//!
     const [newUser, setNewUser] = useState({
