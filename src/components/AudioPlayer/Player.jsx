@@ -1,7 +1,43 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-//const track = '../../Butterfly Kiss.mp3';
-import track from '../../Butterfly Kiss.mp3';
+const random = arr => arr[Math.floor(Math.random() * arr.length)];
+
+const Player = ({ playlist: { music } }) => {
+    const [playing, setPlaying] = useState(false);
+    const [track, setTrack] = useState({});
+
+    useEffect(() => {
+        let track = random(music);  
+
+        setTrack(track);
+    }, [music])
+    
+    const audio = useRef(track);
+
+    const toggle = () => {
+        audio.current.paused ? audio.current.play() : audio.current.pause();
+        console.log(audio.current.ended);
+        
+        setPlaying(!playing);
+        console.log(audio.current.paused, playing);
+    }
+        
+    return (
+        <div>
+            <audio 
+                ref={audio} 
+                src={process.env.PUBLIC_URL + `${track.track}.mp3`} 
+                type="audio/mpeg" 
+                preload="auto" 
+                autoplay 
+                // loop
+            />
+            <button className="btn" onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
+            <br/>
+            <span>Now playing: {track.title}</span>
+        </div>
+    )
+}
 
 // const useAudio = track => {
 //     const [audio] = useState(new Audio(track));
@@ -60,23 +96,5 @@ import track from '../../Butterfly Kiss.mp3';
 //     );
 //   }
 // }
-
-const Player = () => {
-    const [playing, setPlaying] = useState(false);
-    const audio = useRef(track);
-
-    const toggle = () => {
-        audio.current.paused ? audio.current.play() : audio.current.pause();
-        setPlaying(!playing);
-        console.log(audio.current.paused, playing);
-    }
-
-    return (
-        <div>
-            <audio ref={audio} src={track} type="audio/mpeg" preload="auto" autoplay loop></audio>
-            <button onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
-        </div>
-    )
-}
 
 export default Player;

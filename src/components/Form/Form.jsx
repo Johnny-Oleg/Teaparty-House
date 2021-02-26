@@ -7,10 +7,10 @@ const Form = ({ /* users, */ updateState }) => {//!
     const [newUser, setNewUser] = useState({
         name: '',
         avatar: '',
-        id: 4,
+        id: 5,
         top: [
             {
-                id: 0,
+                id: 1,
                 description: {
                     title: '',
                     art: '',
@@ -27,14 +27,14 @@ const Form = ({ /* users, */ updateState }) => {//!
     const handleChange = ({ target: { value } }) => {
         setNewUser({
             name: value.trim(), 
-            avatar: value ?? 'user-demo.jpg', 
-            id: + 5, 
+            avatar: null ?? '/images/user-demo.jpg', 
+            id: newUser.id++, 
             top: [
                 {
                     id: '1',
                     description: {
                         title: 'Lost Odyssey',
-                        art: value ?? '/images/jrpg/user-demo.jpg',
+                        art: null ?? '/images/user-demo.jpg',
                     }
                 }
             ]
@@ -73,7 +73,7 @@ const Form = ({ /* users, */ updateState }) => {//!
                     onChange={handleChange}
                 /> */}
                 <br/>
-                <button className="form-top__btn" type="submit" onClick={() => updateState(newUser)}>Submit</button>
+                <button className="form-top__btn btn" type="submit" onClick={() => updateState(newUser)}>Submit</button>
             </form>
         </div>
     )

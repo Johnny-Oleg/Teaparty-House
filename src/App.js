@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
 
 import data from './database/users.json';
+import playlist from './database/music.json';
 
 import Header from './components/Header/Header';
 import JrpgOfTheDay from './components/JrpgOfTheDay/JrpgOfTheDay';
@@ -13,7 +14,7 @@ import Widgets from './components/Widgets/Widgets';
 import Chat from './components/Chat/Chat';
 import './App.css';
 // const track = './Butterfly Kiss.mp3';
-import track from './Butterfly Kiss.mp3';
+import testTrack from './Butterfly Kiss.mp3';
 
 // const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
@@ -30,10 +31,12 @@ import track from './Butterfly Kiss.mp3';
 
 const App = () => {
   const [users, setUsers] = useState([]);
+  const [music, setMusic] = useState([]);
   const [visibleList, setVisible] = useState(false);
 
   useEffect(() => {
     setUsers(data.users);
+    setMusic(playlist.music);
 
     console.log(users, 'hook');
     console.log('Component did mount');
@@ -61,7 +64,9 @@ const App = () => {
   }
 
   const updateState = newUser => {
-      setUsers([...users, newUser]);
+      const usersCopy = [...users, newUser];
+
+      setUsers(usersCopy);
       console.log(newUser, users, 'updated');
   }
   
@@ -79,9 +84,9 @@ const App = () => {
       <Header />
       <div className="section">
         <JrpgOfTheDay users={users} />
-        <Player track={track} />
+        <Player playlist={playlist} />
         <img src="./images/Sire.png" alt="sir"/>
-        <button className="user-btn" onClick={handleClick}>Show Users</button>
+        <button className="btn" onClick={handleClick}><span>Show Users</span></button>
       </div>
       <div className="main">
         <UsersOnline />

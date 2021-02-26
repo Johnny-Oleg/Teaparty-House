@@ -39,7 +39,7 @@ const User = ({ name, avatar, id, top }) => {
                 <FavoriteBorderIcon fontSize="small" className="user__btn" style={color} onClick={handleLike} />
             {/* </button> */}
             <span>{counter}</span>
-            <button className="user-btn" onClick={handleClick}>Top 10</button>
+            <button className="btn" onClick={handleClick}><span>Top 10</span></button>
             <div className="item__list">
                 {visibleList && <JrpgList top={top} />}
             </div>
