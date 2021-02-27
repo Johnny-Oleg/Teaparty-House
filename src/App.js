@@ -5,6 +5,7 @@ import data from './database/users.json';
 import playlist from './database/music.json';
 
 import Header from './components/Header/Header';
+import Video from './components/Video/Video';
 import JrpgOfTheDay from './components/JrpgOfTheDay/JrpgOfTheDay';
 import Player from './components/AudioPlayer/Player';
 import UserList from './components/UserList/UserList';
@@ -13,7 +14,7 @@ import UsersOnline from './components/UsersOnline/UsersOnline';
 import Widgets from './components/Widgets/Widgets';
 import Chat from './components/Chat/Chat';
 import './App.css';
-// const track = './Butterfly Kiss.mp3';
+
 import testTrack from './Butterfly Kiss.mp3';
 
 // const random = arr => arr[Math.floor(Math.random() * arr.length)];
@@ -42,7 +43,7 @@ const App = () => {
     console.log('Component did mount');
 
     return () => console.log('Component did update');
-  }, [data.users])
+  }, []) //? data.users
   
   //useEffect(() => {
     // fetch(REQUEST)
@@ -82,21 +83,24 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <div className="section">
-        <JrpgOfTheDay users={users} />
-        <Player playlist={playlist} />
-        <img src="./images/Sire.png" alt="sir"/>
-        <button className="btn" onClick={handleClick}><span>Show Users</span></button>
-      </div>
-      <div className="main">
-        <UsersOnline />
-        {visibleList && <UserList users={users} />}
-        <div className="sidebar">
-          <Form /* users={users} */ updateState={updateState} />
-          <Widgets />
-          <Chat />
+      <Video />
+      <div className="container">
+        <div className="section">
+          <JrpgOfTheDay users={users} />
+          <Player playlist={music} />
+          <img src="./images/Sire.png" alt="sir"/>
+          <button className="btn" onClick={handleClick}><span>Show Users</span></button>
         </div>
-      </div>
+        <div className="main">
+          <UsersOnline />
+          {visibleList && <UserList users={users} />}
+          <div className="sidebar">
+            <Form /* users={users} */ updateState={updateState} />
+            <Widgets />
+            <Chat />
+          </div>
+        </div>
+      </div>  
     </div>
   )
 }

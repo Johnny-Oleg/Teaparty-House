@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
-const Player = ({ playlist: { music } }) => {
+const Player = ({ playlist }) => {
     const [playing, setPlaying] = useState(false);
     const [track, setTrack] = useState({});
 
+
     useEffect(() => {
-        let track = random(music);  
+        let track = random(playlist);  
 
         setTrack(track);
-    }, [music])
+    }, [playlist])
     
     const audio = useRef(track);
 
@@ -21,20 +23,20 @@ const Player = ({ playlist: { music } }) => {
         setPlaying(!playing);
         console.log(audio.current.paused, playing);
     }
-        
+
     return (
         <div>
             <audio 
                 ref={audio} 
-                src={process.env.PUBLIC_URL + `${track.track}.mp3`} 
+                src={process.env.PUBLIC_URL + `${track?.track}.mp3`} 
                 type="audio/mpeg" 
                 preload="auto" 
-                autoplay 
-                // loop
+                autoPlay 
+                loop
             />
             <button className="btn" onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
             <br/>
-            <span>Now playing: {track.title}</span>
+            <span>Now playing: {track?.title}</span>
         </div>
     )
 }
@@ -96,5 +98,9 @@ const Player = ({ playlist: { music } }) => {
 //     );
 //   }
 // }
+
+Player.propTypes = {
+    playlist: PropTypes.arrayOf(PropTypes.object),
+}
 
 export default Player;

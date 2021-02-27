@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 /public/music
+/public/video
+/src/DQXI.mp4
+/src/Butterfly Kiss.mp3
 
 # testing
 /coverage

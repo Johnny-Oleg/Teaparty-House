@@ -1,13 +1,17 @@
+ul, li {
+    list-style: none;
+}
+
 .App {
-  height: auto; /*??*/
-  /* display: flex; */
-  text-align: center;
-  background-color: #F1F2FE;
+    height: auto; /*??*/
+    /* display: flex; */
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,24 +25,28 @@
   /* color: #ACA1C5; */
 }
 
+.container {
+    background-color: #F1F2FE;
+}
+
 .section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1000px;
 }
 
 .section > div {
-  flex-basis: 500px;
+    flex-basis: 500px;
 }
 
 .main {
-  display: flex;
-  height: 100vh;
-  justify-content: space-between;
-  /* overflow-y: scroll; */
-  /* align-items: center; */
-  /* margin: 0 auto; */
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+    /* overflow-y: scroll; */
+    /* align-items: center; */
+    /* margin: 0 auto; */
 }
 
 .main::-webkit-scrollbar {
@@ -46,13 +54,13 @@
 }
 
 .sidebar {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-left: 1px solid #97B9F2;
-  /* position: fixed; */
-  /* margin: 0 auto; */
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid #97B9F2;
+    /* position: fixed; */
+    /* margin: 0 auto; */
 }
 
 .btn {
@@ -117,10 +125,6 @@
 .btn:hover span:after {
     opacity: 1;
     right: 0;
-}
-
-ul, li {
-  list-style: none;
 }
 
 @keyframes App-logo-spin {
