@@ -7,6 +7,7 @@ import './Userlist.css';
 
 const UserList = ({ users }) => {
     console.log(users);
+    
     return (
         <ul className="user__list">
             {users.map((item, index) => <User key={item.id} {...item} />)}

@@ -19,7 +19,7 @@ const Video = () => {
             <div className="shadow"></div>
             <div className="text-content">
                 <h1>Teaparty House | ティーパーティーハウス</h1>
-                <p>the only place you can rest... | あなたが休むことができる唯一の場所...</p>
+                <p>The only place to rest... | 休む唯一の場所...</p>
             </div>
         </div>
     )

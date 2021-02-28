@@ -27,11 +27,11 @@ const Form = ({ /* users, */ updateState }) => {//!
     const handleChange = ({ target: { value } }) => {
         setNewUser({
             name: value.trim(), 
-            avatar: null ?? '/images/user-demo.jpg', 
+            avatar: null ?? '/images/avatars/default-user.png', 
             id: newUser.id++, 
             top: [
                 {
-                    id: '1',
+                    id: 1,
                     description: {
                         title: 'Lost Odyssey',
                         art: null ?? '/images/user-demo.jpg',

@@ -6,22 +6,18 @@ const random = arr => arr[Math.floor(Math.random() * arr.length)];
 const Player = ({ playlist }) => {
     const [playing, setPlaying] = useState(false);
     const [track, setTrack] = useState({});
-
-
-    useEffect(() => {
-        let track = random(playlist);  
-
-        setTrack(track);
-    }, [playlist])
-    
     const audio = useRef(track);
 
+    useEffect(() => {
+        setTrack(random(playlist));
+
+        audio.current.addEventListener('ended', () => setTrack(track));
+    }, [track])
+    
     const toggle = () => {
         audio.current.paused ? audio.current.play() : audio.current.pause();
-        console.log(audio.current.ended);
         
         setPlaying(!playing);
-        console.log(audio.current.paused, playing);
     }
 
     return (
@@ -30,13 +26,13 @@ const Player = ({ playlist }) => {
                 ref={audio} 
                 src={process.env.PUBLIC_URL + `${track?.track}.mp3`} 
                 type="audio/mpeg" 
-                preload="auto" 
-                autoPlay 
-                loop
+                // preload="auto" 
+                // autoPlay 
+                // loop
             />
             <button className="btn" onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
-            <br/>
-            <span>Now playing: {track?.title}</span>
+            <span>Now playing:</span>
+            <span>{playing && track?.title}</span>
         </div>
     )
 }
@@ -66,37 +62,6 @@ const Player = ({ playlist }) => {
 //             <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>
 //         </div>
 //     )
-// }
-
-// class Player extends React.Component {
-//   state = {
-//     play: false
-//   };
-  
-//   audio = new Audio(this.props.track);
-
-//   componentDidMount() {
-//     this.audio.addEventListener('ended', () => this.setState({ play: false }));
-//     console.log(this.audio.src);
-//   }
-
-//   componentWillUnmount() {
-//     this.audio.removeEventListener('ended', () => this.setState({ play: false }));  
-//   }
-
-//   togglePlay = () => {
-//     this.setState({ play: !this.state.play }, () => {
-//       this.state.play ? this.audio.play() : this.audio.pause();
-//     });
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <button onClick={this.togglePlay}>{this.state.play ? 'Pause' : 'Play'}</button>
-//       </div>
-//     );
-//   }
 // }
 
 Player.propTypes = {

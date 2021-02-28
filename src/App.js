@@ -37,14 +37,17 @@ const App = () => {
 
   useEffect(() => {
     setUsers(data.users);
-    setMusic(playlist.music);
 
     console.log(users, 'hook');
     console.log('Component did mount');
 
     return () => console.log('Component did update');
-  }, []) //? data.users
+  }, [data.users]) //? data.users
   
+
+  useEffect(() => {
+      setMusic(playlist.music);
+  }, [music])
   //useEffect(() => {
     // fetch(REQUEST)
     //   .then(res => res.json())
@@ -70,6 +73,8 @@ const App = () => {
       setUsers(usersCopy);
       console.log(newUser, users, 'updated');
   }
+
+  const countUsers = users.reduce((total, user) => user?.name ? total += 1 : total, 0);
   
   // const toggleVisibleList = () => {
   //   setVisible(visible => !visible);
@@ -81,7 +86,7 @@ const App = () => {
   if (!users) return <p>Loading, please wait...</p>;
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <Video />
       <div className="container">
@@ -90,6 +95,9 @@ const App = () => {
           <Player playlist={music} />
           <img src="./images/Sire.png" alt="sir"/>
           <button className="btn" onClick={handleClick}><span>Show Users</span></button>
+          <br/>
+          {/* <span>Total users: {users.length}</span> */}
+          <span>Total users: {countUsers}</span>
         </div>
         <div className="main">
           <UsersOnline />
