@@ -8,6 +8,7 @@ const Form = ({ /* users, */ updateState }) => {//!
         name: '',
         avatar: '',
         id: 5,
+        likes: 0,
         top: [
             {
                 id: 1,
@@ -29,6 +30,7 @@ const Form = ({ /* users, */ updateState }) => {//!
             name: value.trim(), 
             avatar: null ?? '/images/avatars/default-user.png', 
             id: newUser.id++, 
+            likes: 0,
             top: [
                 {
                     id: 1,
@@ -45,6 +47,8 @@ const Form = ({ /* users, */ updateState }) => {//!
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        // setNewUser('');
     }
 
     useEffect(() => {
@@ -54,8 +58,8 @@ const Form = ({ /* users, */ updateState }) => {//!
 
     return (
         <div className="form-top">
-            <label>Add your Top 10 JRPG</label>
             <form onSubmit={handleSubmit}>
+                <label>Add your Top 10 JRPG</label>
                 <input 
                     className="form-top__input" 
                     type="text" 

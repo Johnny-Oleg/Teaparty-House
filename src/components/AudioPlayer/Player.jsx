@@ -26,13 +26,13 @@ const Player = ({ playlist }) => {
                 ref={audio} 
                 src={process.env.PUBLIC_URL + `${track?.track}.mp3`} 
                 type="audio/mpeg" 
-                // preload="auto" 
-                // autoPlay 
+                preload="auto" 
+                autoPlay 
                 // loop
             />
             <button className="btn" onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
             <span>Now playing:</span>
-            <span>{playing && track?.title}</span>
+            <span>{playing ? track?.title : 'Paused... ¯\\_(ツ)_/¯'}</span>
         </div>
     )
 }

@@ -31,18 +31,18 @@ import testTrack from './Butterfly Kiss.mp3';
 //let REQUEST = new Request('http://localhost:8080/users.json', init);
 
 const App = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(data.users); //? []
   const [music, setMusic] = useState([]);
   const [visibleList, setVisible] = useState(false);
 
   useEffect(() => {
-    setUsers(data.users);
+    setUsers(users); //? data.users
 
     console.log(users, 'hook');
     console.log('Component did mount');
 
     return () => console.log('Component did update');
-  }, [data.users]) //? data.users
+  }, [users]) //? data.users
   
 
   useEffect(() => {
@@ -74,6 +74,13 @@ const App = () => {
       console.log(newUser, users, 'updated');
   }
 
+  const updateLikes = likes => {
+      const usersCopy = [...users.map(user => ({...user, likes}))];
+
+      setUsers(usersCopy);
+      console.log(likes, users, 'updated');
+  }
+
   const countUsers = users.reduce((total, user) => user?.name ? total += 1 : total, 0);
   
   // const toggleVisibleList = () => {
@@ -96,12 +103,12 @@ const App = () => {
           <img src="./images/Sire.png" alt="sir"/>
           <button className="btn" onClick={handleClick}><span>Show Users</span></button>
           <br/>
-          {/* <span>Total users: {users.length}</span> */}
           <span>Total users: {countUsers}</span>
+          <img src="./images/BLM.gif" alt="blm"/>
         </div>
         <div className="main">
           <UsersOnline />
-          {visibleList && <UserList users={users} />}
+          {visibleList && <UserList users={users} updateLikes={updateLikes} />}
           <div className="sidebar">
             <Form /* users={users} */ updateState={updateState} />
             <Widgets />

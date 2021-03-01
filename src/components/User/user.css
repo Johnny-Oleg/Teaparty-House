@@ -3,6 +3,8 @@
 }
 
 .user__item {
+    width: 210px;
+    height: auto;
     color: black; 
     font-size: 24px;
 }

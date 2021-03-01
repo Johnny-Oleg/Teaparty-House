@@ -5,9 +5,8 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import JrpgList from '../JrpgList/JrpgList';
 import './User.css';
 
-const User = ({ name, avatar, id, top }) => {
-    //console.log(id);
-    const [counter, setCounter] = useState(0);
+const User = ({ name, avatar, id, likes, top, updateLikes }) => {
+    const [counter, setCounter] = useState(likes);
     const [color, setColor] = useState({backgroundColor: '', clicked: false});
     const [visibleList, setVisible] = useState(false);
 
@@ -16,6 +15,7 @@ const User = ({ name, avatar, id, top }) => {
         console.log(color.clicked);
 
         !color.clicked && setColor({backgroundColor: 'red', clicked: true});
+        updateLikes(counter + 1); //TODO
     }
     
     useEffect(() => {
@@ -52,6 +52,7 @@ User.propTypes = {
     avatar: PropTypes.string,
     id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     top: PropTypes.arrayOf(PropTypes.object),
+    updateLikes: PropTypes.func.isRequired,
 }
 
 export default User;

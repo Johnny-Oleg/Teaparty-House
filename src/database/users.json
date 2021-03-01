@@ -4,6 +4,7 @@
             "name": "Neojiny",
             "avatar": "/images/avatars/neojiny-avatar.gif",
             "id": 1,
+            "likes": 0,
             "top": [
                 {
                     "id": 1,
@@ -81,6 +82,7 @@
             "name": "OkaRin",
             "avatar": "/images/avatars/okarin-avatar.jpg",
             "id": 2,
+            "likes": 0,
             "top": [
                 {
                     "id": 1,
@@ -158,6 +160,7 @@
             "name": "Ayreon",
             "avatar": "/images/avatars/ayreon-avatar.png",
             "id": 3,
+            "likes": 0,
             "top": [
                 {
                     "id": 1,
@@ -236,6 +239,7 @@
             "name": "gerogeri",
             "avatar": "/images/avatars/gerogeri-avatar.jpg",
             "id": 4,
+            "likes": 0,
             "top": [
                 {
                     "id": 1,

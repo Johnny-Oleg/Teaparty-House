@@ -1,5 +1,6 @@
 .user__list {
     /* width: 600px; */
+    height: 100vh;
     flex: 0.4;
     min-width: fit-content;
     overflow-y: scroll;
@@ -11,4 +12,34 @@
 
 .user__list::-webkit-scrollbar {
     display: none;
+}
+
+.sort-btn {
+    min-width: 100px;
+    height: 40px;
+    padding: 10px 10px;
+    /* margin: 5px; */
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.215em;
+    text-transform: uppercase;
+    background: #46B5EF;
+    text-decoration: none;
+    outline: none;
+    color: #FBFBFD;
+    border: 2px solid #FBFBFD;
+    border-radius: 37px;
+    word-spacing: normal;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sort-btn:hover {
+    color: #46B5EF;
+    border: 2px solid #46B5EF;
+    background: #FBFBFD;
 }
