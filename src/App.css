@@ -138,3 +138,8 @@ ul, li {
     transform: rotate(360deg);
   }
 }
+
+.container.dark {
+    background-color: #282c34;
+    color: #fff;
+}

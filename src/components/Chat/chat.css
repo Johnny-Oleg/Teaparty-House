@@ -1,8 +1,8 @@
 .chat {
     width: 290px;
     height: 350px;
-    border: 1px solid #000;
-    background-color: #46b5ef;
+    border: 2px solid #46B5EF;
+    background-color: #F6F6F6;
     overflow-y: scroll;
 }
 
@@ -44,12 +44,14 @@
 }
 
 .chat__message span {
-    color: #FBFBFD;
+    color: #000;
 }
 
 .chat__message p {
-    width: 250px;
+    min-width: 50px;
     height: auto;
+    padding: 10px 5px;
+    text-align: left;
     border: 2px solid #46B5EF;
     border-radius: 37px;
     background-color: #FBFBFD;

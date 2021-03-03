@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import User from '../User/User';
 import './Userlist.css';
-import { Sort } from '@material-ui/icons';
 
 const UserList = ({ users, updateLikes }) => {   
     const [sorted, setSorted] = useState(users);

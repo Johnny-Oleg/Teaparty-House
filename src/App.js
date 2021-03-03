@@ -31,93 +31,111 @@ import testTrack from './Butterfly Kiss.mp3';
 //let REQUEST = new Request('http://localhost:8080/users.json', init);
 
 const App = () => {
-  const [users, setUsers] = useState(data.users); //? []
-  const [music, setMusic] = useState([]);
-  const [visibleList, setVisible] = useState(false);
+    const [users, setUsers] = useState(data.users); //? []
+    const [music, setMusic] = useState([]);
+    const [visibleList, setVisible] = useState(false);
+    const [themeDark, setThemeDark] = useState(false);
 
-  useEffect(() => {
-    setUsers(users); //? data.users
+    useEffect(() => {
+      setUsers(users); //? data.users
 
-    console.log(users, 'hook');
-    console.log('Component did mount');
+      console.log(users, 'hook');
+      console.log('Component did mount');
 
-    return () => console.log('Component did update');
-  }, [users]) //? data.users
-  
+      return () => console.log('Component did update');
+    }, [users]) //? data.users
+    
+    useEffect(() => {
+        const currentTheme = localStorage.getItem('theme-color');
 
-  useEffect(() => {
-      setMusic(playlist.music);
-  }, [music])
-  //useEffect(() => {
-    // fetch(REQUEST)
-    //   .then(res => res.json())
-    //   .then(data => {
-    //       //setUsers(data.users);
+        currentTheme === 'dark' ? setThemeDark(true) : setThemeDark(false);
+    }, [])
 
-    //       console.log(data, 'hook');
-    //       console.log('Component did mount');
-    //   });
+    useEffect(() => {
+        setMusic(playlist.music);
+    }, [music])
+    //useEffect(() => {
+      // fetch(REQUEST)
+      //   .then(res => res.json())
+      //   .then(data => {
+      //       //setUsers(data.users);
 
-    //return () => console.log('Component did update');
-  //}, [])
-  
-  const handleClick = () => {
-      console.log(users, 'data.users');
-      setVisible(visible => !visible);
-      // setUsers(data.users);
-  }
+      //       console.log(data, 'hook');
+      //       console.log('Component did mount');
+      //   });
 
-  const updateState = newUser => {
-      const usersCopy = [...users, newUser];
+      //return () => console.log('Component did update');
+    //}, [])
 
-      setUsers(usersCopy);
-      console.log(newUser, users, 'updated');
-  }
+    const handleTheme = () => {
+        if (themeDark) {
+            localStorage.setItem('theme-color', 'light');
 
-  const updateLikes = likes => {
-      const usersCopy = [...users.map(user => ({...user, likes}))];
+            setThemeDark(false);
+        } else {
+            localStorage.setItem('theme-color', 'dark');
 
-      setUsers(usersCopy);
-      console.log(likes, users, 'updated');
-  }
+            setThemeDark(true);
+        }    
+    }
+    
+    const handleClick = () => {
+        console.log(users, 'data.users');
+        setVisible(visible => !visible);
+        // setUsers(data.users);
+    }
 
-  const countUsers = users.reduce((total, user) => user?.name ? total += 1 : total, 0);
-  
-  // const toggleVisibleList = () => {
-  //   setVisible(visible => !visible);
-  //   console.log(visibleList);
-  // }
+    const updateState = newUser => {
+        const usersCopy = [...users, newUser];
 
-  console.log(users, 'users'); //!
+        setUsers(usersCopy);
+        console.log(newUser, users, 'updated');
+    }
 
-  if (!users) return <p>Loading, please wait...</p>;
+    const updateLikes = likes => {
+        const usersCopy = [...users.map(user => ({...user, likes}))];
 
-  return (
-    <div className="app">
-      <Header />
-      <Video />
-      <div className="container">
-        <div className="section">
-          <JrpgOfTheDay users={users} />
-          <Player playlist={music} />
-          <img src="./images/Sire.png" alt="sir"/>
-          <button className="btn" onClick={handleClick}><span>Show Users</span></button>
-          <br/>
-          <span>Total users: {countUsers}</span>
-          <img src="./images/BLM.gif" alt="blm"/>
+        setUsers(usersCopy);
+        console.log(likes, users, 'updated');
+    }
+
+    const countUsers = users.reduce((total, user) => user?.name ? total += 1 : total, 0);
+    
+    // const toggleVisibleList = () => {
+    //   setVisible(visible => !visible);
+    //   console.log(visibleList);
+    // }
+
+    console.log(users, 'users'); //!
+
+    if (!users) return <p>Loading, please wait...</p>;
+
+    return (
+        <div className="app">
+                <Header handleTheme={handleTheme} theme={themeDark} />
+            <Video />
+            <div className={`container ${themeDark ? 'dark' : ''}`}>
+                <div className="section">
+                  <JrpgOfTheDay users={users} />
+                  <Player playlist={music} />
+                  <img src="./images/Sire.png" alt="sir"/>
+                  <button className="btn" onClick={handleClick}><span>Show Users</span></button>
+                  <br/>
+                  <span>Total users: {countUsers}</span>
+                  <img src="./images/BLM.gif" alt="blm"/>
+                </div>
+                <div className="main">
+                  <UsersOnline />
+                  {visibleList && <UserList users={users} updateLikes={updateLikes} />}
+                  <div className="sidebar">
+                    <Form /* users={users} */ updateState={updateState} />
+                    <Widgets />
+                    <Chat />
+                  </div>
+                </div>
+            </div>  
         </div>
-        <div className="main">
-          <UsersOnline />
-          {visibleList && <UserList users={users} updateLikes={updateLikes} />}
-          <div className="sidebar">
-            <Form /* users={users} */ updateState={updateState} />
-            <Widgets />
-            <Chat />
-          </div>
-        </div>
-      </div>  
-    </div>
-  )
+    )
 }
 
 export default App;

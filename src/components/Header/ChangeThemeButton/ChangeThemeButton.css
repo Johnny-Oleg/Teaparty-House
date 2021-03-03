@@ -1,0 +1,106 @@
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    height: 100%;
+    margin-right: 15px; /* 1.5rem */
+}
+
+.theme-switch-wrapper .theme-switch {
+    display: inline-block;
+    height: 24px; /* 2.4rem */
+    position: relative;
+    width: 40px; /* 4rem */
+    margin: 0;
+}
+
+/* label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+} */
+
+.theme-switch-wrapper .theme-switch input {
+    display: none;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 4px 0 0;
+    /* margin-top: 1px\9; */
+    line-height: normal;
+}
+
+input[type=checkbox], input[type=radio] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input {
+    overflow: visible;
+}
+
+.theme-switch-wrapper .slider.round {
+    border-radius: 34px;
+}
+
+.theme-switch-wrapper .slider.animated {
+    opacity: 1;
+}
+
+.theme-switch-wrapper .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.theme-switch-wrapper .slider.round:before {
+    border-radius: 50%;
+}
+
+.theme-switch-wrapper .slider.animated:before {
+    transition: .4s;
+}
+
+.theme-switch-wrapper .slider:before {
+    content: '';
+    bottom: 2px; /* .2rem */
+    height: 20px; /* 2rem */
+    left: 2px; /* .2rem */
+    position: absolute;
+    width: 20px; /* 2rem */
+    font-size: 12px; /* 1.2rem; */
+    line-height: 20px; /* 2rem */
+    text-align: center;
+    filter: grayscale(100%);
+    background: url(./icon-moon.png) center no-repeat #fff;
+    background-size: 70%;
+}
+
+.theme-switch-wrapper input:checked+.slider:before {
+    transform: translateX(16px); /* 1.6rem */
+    filter: grayscale(0);
+}
+
+.theme-switch-wrapper input:checked+.slider {
+    background-color: #46B5EF;
+}
+
+@media (max-width: 1560px) {
+    .theme-switch-wrapper {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 1448px) {
+    .theme-switch-wrapper {
+        margin-right: .5rem;
+    }
+}    

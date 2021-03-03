@@ -1,20 +1,25 @@
 .header {
-  background-color: #282c34;
-  min-height: 10vh;
-  padding: 10px 30px;
-  display: flex;
-  /* flex-direction: column; */
-  /* flex-direction: row; */
-  align-items: center;
-  /* justify-content: center; */
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
-  color:#FFF;
+    background-color: #515868;
+    min-height: 10vh;
+    padding: 10px 30px;
+    display: flex;
+    /* flex-direction: column; */
+    /* flex-direction: row; */
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: space-between;
+    font-size: calc(5px + 2vmin);
+    color:#FFF;
 }
 
 .logo {
-  width: 200px;
-  height: auto;
-  background-color: #F1F2FE;
-  border-radius: 50px;
+    width: 200px;
+    height: auto;
+    background-color: #F1F2FE;
+    border-radius: 50px;
+}
+
+.header.dark {
+    background-color: #000;
+    color:#FFF;
 }

@@ -35,7 +35,7 @@ const Form = ({ /* users, */ updateState }) => {//!
                 {
                     id: 1,
                     description: {
-                        title: 'Lost Odyssey',
+                        title: 'Xenosaga Episode I: Der Wille zur Macht',
                         art: null ?? '/images/user-demo.jpg',
                     }
                 }
