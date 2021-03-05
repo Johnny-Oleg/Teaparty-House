@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
-import JrpgList from '../JrpgList/JrpgList';
+import JrpgList from './JrpgList/JrpgList';
 import './User.css';
 
 const User = ({ name, avatar, id, likes, top, updateLikes }) => {
@@ -35,13 +35,13 @@ const User = ({ name, avatar, id, likes, top, updateLikes }) => {
                 src={process.env.PUBLIC_URL + avatar}  
                 alt="avatar"
             />
-            {/* <button className="user__btn" style={color} onClick={handleClick}> */}
+            <div className="user__top">
+                <button className="btn" onClick={handleClick}><span>Top 10</span></button>
+                <div className="item__list">
+                    {visibleList && <JrpgList top={top} />}
+                </div>
                 <FavoriteBorderIcon fontSize="small" className="user__btn" style={color} onClick={handleLike} />
-            {/* </button> */}
-            <span>{counter}</span>
-            <button className="btn" onClick={handleClick}><span>Top 10</span></button>
-            <div className="item__list">
-                {visibleList && <JrpgList top={top} />}
+                <span>{counter}</span>
             </div>
         </li>
     )

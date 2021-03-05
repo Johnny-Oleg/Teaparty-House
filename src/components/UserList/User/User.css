@@ -1,9 +1,10 @@
 .user {
+    width: 300px;
     border-bottom: 10px solid #1967D2;
 }
 
 .user__item {
-    width: 210px;
+    width: 250px;
     height: auto;
     color: black; 
     font-size: 24px;
@@ -26,6 +27,9 @@
     align-items: center;
 }
 
-/* .user__btn:active {
-    background-color: red;
-} */
+.user__top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}

@@ -1,3 +1,14 @@
+html {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
 ul, li {
     list-style: none;
 }
@@ -32,12 +43,12 @@ ul, li {
 
 .section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* space-around */
     align-items: center;
     width: 100%;
     height: 200px;
     padding-top: 10px;
-    vertical-align: baseline;
+    padding-right: 20px;
 }
 
 .section > div {
@@ -46,6 +57,10 @@ ul, li {
 
 .section span {
     display: block;
+}
+
+.section .btn:nth-child(4) {
+    margin-bottom: 40px;
 }
 
 .main {
@@ -117,7 +132,6 @@ ul, li {
 .btn:hover {
     color: #46B5EF;
     border: 2px solid #46B5EF;
-    /* border-color: #FBFBFD; */
     background: #FBFBFD;
 }
 
@@ -139,7 +153,28 @@ ul, li {
   }
 }
 
-.container.dark {
+.app.dark .container {
     background-color: #282c34;
     color: #fff;
+}
+
+.app.dark .btn,
+.app.dark .sort-btn,
+.app.dark .chat-btn {
+    background: #4208be;
+    color: #acacb1;
+    border: 2px solid #acacb1;
+}
+
+.app.dark .btn:hover,
+.app.dark .sort-btn:hover,
+.app.dark .chat-btn:hover {
+    color: #4208be;
+    border: 2px solid #4208be;
+    background: #acacb1;
+}
+
+.app.dark .header {
+    background-color: #000;
+    color:#FFF;
 }

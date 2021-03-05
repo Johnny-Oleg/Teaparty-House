@@ -111,27 +111,27 @@ const App = () => {
     if (!users) return <p>Loading, please wait...</p>;
 
     return (
-        <div className="app">
+        <div className={`app ${themeDark ? 'dark' : ''}`}>
                 <Header handleTheme={handleTheme} theme={themeDark} />
             <Video />
-            <div className={`container ${themeDark ? 'dark' : ''}`}>
+            <div className={`container `}>
                 <div className="section">
-                  <JrpgOfTheDay users={users} />
-                  <Player playlist={music} />
-                  <img src="./images/Sire.png" alt="sir"/>
-                  <button className="btn" onClick={handleClick}><span>Show Users</span></button>
-                  <br/>
-                  <span>Total users: {countUsers}</span>
-                  <img src="./images/BLM.gif" alt="blm"/>
+                    <JrpgOfTheDay users={users} />
+                    <Player playlist={music} />
+                    <img src="./images/Sire.png" alt="sir"/>
+                    <button className="btn" onClick={handleClick}><span>Show Users</span></button>
+                    <br/>
+                    <span>Total users: {countUsers}</span>
+                    <img src="./images/BLM.gif" alt="blm"/>
                 </div>
                 <div className="main">
-                  <UsersOnline />
-                  {visibleList && <UserList users={users} updateLikes={updateLikes} />}
-                  <div className="sidebar">
-                    <Form /* users={users} */ updateState={updateState} />
-                    <Widgets />
-                    <Chat />
-                  </div>
+                    <UsersOnline />
+                    {visibleList && <UserList users={users} updateLikes={updateLikes} />}
+                    <div className="sidebar">
+                        <Form /* users={users} */ updateState={updateState} />
+                        <Widgets />
+                        <Chat />
+                    </div>
                 </div>
             </div>  
         </div>

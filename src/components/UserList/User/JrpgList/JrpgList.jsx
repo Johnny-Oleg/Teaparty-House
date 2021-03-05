@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Jrpg from '../Jrpg/Jrpg';
+import Jrpg from './Jrpg/Jrpg';
 
 const JrpgList = ({ top }) => {
     return (

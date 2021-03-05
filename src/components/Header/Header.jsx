@@ -5,7 +5,7 @@ import './Header.css';
 
 const Header = ({ handleTheme, theme }) => {
     return (
-        <header className={`header ${theme ? 'dark' : ''}`}>
+        <header className="header">
             <div className="logo">
                 <img src="./images/teaparty-house-logo.png" alt="logo"/>
             </div>

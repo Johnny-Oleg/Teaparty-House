@@ -90,7 +90,7 @@ input {
 }
 
 .theme-switch-wrapper input:checked+.slider {
-    background-color: #46B5EF;
+    background-color: #4208be;
 }
 
 @media (max-width: 1560px) {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // import FlipMove from 'react-flip-move';
 
-import User from '../User/User';
+import User from './User/User';
 import './Userlist.css';
 
 const UserList = ({ users, updateLikes }) => {   

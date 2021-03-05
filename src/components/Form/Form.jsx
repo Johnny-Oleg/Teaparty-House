@@ -15,15 +15,11 @@ const Form = ({ /* users, */ updateState }) => {//!
                 description: {
                     title: '',
                     art: '',
-                }
+                },
 
             }
         ],
     });
-// console.log(updateState);
-    // const [userAvatar, setUserAvatar] = useState('');
-
-    // console.log(users);//!
 
     const handleChange = ({ target: { value } }) => {
         setNewUser({
@@ -37,12 +33,55 @@ const Form = ({ /* users, */ updateState }) => {//!
                     description: {
                         title: 'Xenosaga Episode I: Der Wille zur Macht',
                         art: null ?? '/images/user-demo.jpg',
-                    }
+                    },
+                    id: 2,
+                    description: {
+                        title: 'Xenosaga Episode II: Jenseits von Gut und Böse',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 3,
+                    description: {
+                        title: 'Xenosaga Episode III: Also Sprach Zarathustra',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 4,
+                    description: {
+                        title: 'Xenogears',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 5,
+                    description: {
+                        title: 'Xenoblade Chronicles',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 6,
+                    description: {
+                        title: 'Final Fantasy X',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 7,
+                    description: {
+                        title: 'Persona 3',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 8,
+                    description: {
+                        title: 'Persona 5',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 9,
+                    description: {
+                        title: '.hack//G.U.',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                    id: 10,
+                    description: {
+                        title: 'Infinite Undiscovery',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
                 }
             ]
         });
-        // setUserAvatar(value)
-        // console.log(value);
     }
 
     const handleSubmit = e => {
@@ -54,7 +93,6 @@ const Form = ({ /* users, */ updateState }) => {//!
     useEffect(() => {
         console.log(newUser, '->', /* usersArr */);
     }, [newUser])
-    // console.log(newUser);
 
     return (
         <div className="form-top">
@@ -68,16 +106,14 @@ const Form = ({ /* users, */ updateState }) => {//!
                     placeholder="Enter your username"
                     onChange={handleChange}
                 />
-                {/* <input 
-                    className="form-top__input" 
-                    // type="file" 
-                    type="text"
-                    name={newUser.avatar} 
-                    value={newUser.avatar} 
-                    onChange={handleChange}
-                /> */}
                 <br/>
-                <button className="form-top__btn btn" type="submit" onClick={() => updateState(newUser)}>Submit</button>
+                <button 
+                    className="form-top__btn btn" 
+                    type="submit" 
+                    onClick={() => updateState(newUser)}
+                >
+                    Submit
+                </button>
             </form>
         </div>
     )
