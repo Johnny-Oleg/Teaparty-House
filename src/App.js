@@ -92,11 +92,17 @@ const App = () => {
         console.log(newUser, users, 'updated');
     }
 
-    const updateLikes = likes => {
-        const usersCopy = [...users.map(user => ({...user, likes}))];
+    const updateLikes = (id, likes) => {
+        const usersCopy = [...users.map(user => {
+            if (user.id === id) {
+                user.likes = likes;
+            }
+
+            return user;
+        })];
 
         setUsers(usersCopy);
-        console.log(likes, users, 'updated');
+        console.log(id, likes, users, 'updated');
     }
 
     const countUsers = users.reduce((total, user) => user?.name ? total += 1 : total, 0);

@@ -10,12 +10,12 @@ const User = ({ name, avatar, id, likes, top, updateLikes }) => {
     const [color, setColor] = useState({backgroundColor: '', clicked: false});
     const [visibleList, setVisible] = useState(false);
 
-    const handleLike = () => {
+    const handleLike = (id) => {
         setCounter(counter + 1);
         console.log(color.clicked);
 
         !color.clicked && setColor({backgroundColor: 'red', clicked: true});
-        updateLikes(counter + 1); //TODO
+        updateLikes(id, counter + 1); //TODO
     }
     
     useEffect(() => {
@@ -37,11 +37,19 @@ const User = ({ name, avatar, id, likes, top, updateLikes }) => {
             />
             <div className="user__top">
                 <button className="btn" onClick={handleClick}><span>Top 10</span></button>
+                {/* <div className="item__list">
+                    {visibleList && <JrpgList top={top} />}
+                </div> */}
+                <FavoriteBorderIcon 
+                    className="user__btn"
+                    fontSize="small" 
+                    style={color} 
+                    onClick={() => handleLike(id)} 
+                />
+                <span>{counter}</span>
                 <div className="item__list">
                     {visibleList && <JrpgList top={top} />}
                 </div>
-                <FavoriteBorderIcon fontSize="small" className="user__btn" style={color} onClick={handleLike} />
-                <span>{counter}</span>
             </div>
         </li>
     )

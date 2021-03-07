@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import './JrpgOfTheDay.css';
@@ -9,7 +9,7 @@ const JrpgOfTheDay = ({ users }) => {
     const [jrpg, setJrpg] = useState({});
 
     const jrpgListTitle = users.map(user => user.top.map(item => item.description));
-    const randomJrpgTitle = random([...new Set(jrpgListTitle.flat())]);
+    const randomJrpgTitle = useMemo(() => random([...new Set(jrpgListTitle.flat())]), []); //? jrpgListTitle
     console.log(randomJrpgTitle);
     
     useEffect(() => {

@@ -7,11 +7,15 @@ const Player = ({ playlist }) => {
     const [playing, setPlaying] = useState(false);
     const [track, setTrack] = useState({});
     const audio = useRef(track);
-
+    
     useEffect(() => {
         setTrack(random(playlist));
-
+        
         audio.current.addEventListener('ended', () => setTrack(track));
+        
+        const audioNode = audio.current;
+
+        return () => audioNode.removeEventListener('ended', () => setPlaying(false));
     }, [track])
     
     const toggle = () => {

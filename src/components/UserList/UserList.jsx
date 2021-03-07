@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import FlipMove from 'react-flip-move';
 
@@ -30,6 +31,12 @@ const UserList = ({ users, updateLikes }) => {
             </ul>
         </div>
     )
+}
+
+const mapStateToProps = state => {
+    return {
+        users: state.users,
+    }
 }
 
 UserList.propTypes = {

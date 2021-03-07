@@ -34,51 +34,51 @@ const Form = ({ /* users, */ updateState }) => {//!
                         title: 'Xenosaga Episode I: Der Wille zur Macht',
                         art: null ?? '/images/user-demo.jpg',
                     },
-                    id: 2,
-                    description: {
-                        title: 'Xenosaga Episode II: Jenseits von Gut und Böse',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 3,
-                    description: {
-                        title: 'Xenosaga Episode III: Also Sprach Zarathustra',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 4,
-                    description: {
-                        title: 'Xenogears',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 5,
-                    description: {
-                        title: 'Xenoblade Chronicles',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 6,
-                    description: {
-                        title: 'Final Fantasy X',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 7,
-                    description: {
-                        title: 'Persona 3',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 8,
-                    description: {
-                        title: 'Persona 5',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 9,
-                    description: {
-                        title: '.hack//G.U.',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
-                    id: 10,
-                    description: {
-                        title: 'Infinite Undiscovery',
-                        art: null ?? '/images/user-demo.jpg',
-                    },
+                    // id: 2,
+                    // description: {
+                    //     title: 'Xenosaga Episode II: Jenseits von Gut und Böse',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 3,
+                    // description: {
+                    //     title: 'Xenosaga Episode III: Also Sprach Zarathustra',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 4,
+                    // description: {
+                    //     title: 'Xenogears',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 5,
+                    // description: {
+                    //     title: 'Xenoblade Chronicles',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 6,
+                    // description: {
+                    //     title: 'Final Fantasy X',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 7,
+                    // description: {
+                    //     title: 'Persona 3',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 8,
+                    // description: {
+                    //     title: 'Persona 5',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 9,
+                    // description: {
+                    //     title: '.hack//G.U.',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
+                    // id: 10,
+                    // description: {
+                    //     title: 'Infinite Undiscovery',
+                    //     art: null ?? '/images/user-demo.jpg',
+                    // },
                 }
             ]
         });

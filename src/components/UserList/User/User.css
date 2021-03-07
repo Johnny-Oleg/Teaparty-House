@@ -27,9 +27,13 @@
     align-items: center;
 }
 
+.item__List ul {
+    padding-left: initial;
+}
+
 .user__top {
-    display: flex;
+    /* display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: center; */
     padding-right: 10px;
 }

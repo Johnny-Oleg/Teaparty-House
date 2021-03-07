@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import Message from './Message/Message';
+import BotMessage from './BotMessage/BotMessage';
 import './Chat.css';
 
 const Chat = () => {
@@ -10,9 +11,11 @@ const Chat = () => {
 
     const sendMessage = e => {
         e.preventDefault();
-        
-        const messagesCopy = [...messages, {id: Math.floor(Math.random() * 10), text: messageValue}];
 
+        const messagesCopy = [...messages, {id: Math.floor(Math.random() * 100), text: messageValue}];
+        
+        // const messagesCopy = [...messages, {id: Math.floor(Math.random() * 100), text: messageValue.includes('@Johnny') ? 'Hello from bot! <3': messageValue}]; // TODO
+        
         setMessages(messagesCopy);
         setMessageValue('');
         scroll.current.scrollIntoView({behavior: 'smooth'});
@@ -24,10 +27,15 @@ const Chat = () => {
         <div>
             <h3>Chat</h3>
             <div className="chat">
-                {messages && messages.map(message => <Message key={message.id} message={message.text} />)}
+                {/* {messages && messages.map(message => <Message key={message.id} message={message.text} />)} */}
+                {messages && messages.map(message => message.text.includes('@Johnny') ?
+                    <BotMessage key={message.id} message={message.text} /> :
+                    <Message key={message.id} message={message.text} />)
+                }
+               
                 <div ref={scroll}></div>
             </div>
-            <form action="" onSubmit={sendMessage}>
+            <form className="chat-form" action="" onSubmit={sendMessage}>
                 <input 
                     type="text" 
                     value={messageValue} 
