@@ -15,7 +15,7 @@ const UserList = ({ users, updateLikes }) => {
        
        setSorted(sortedUsers);
        setIsSorted(!isSorted);
-    };
+    }
 
     const defaultOrder = users.
         map((item, index) => <User key={item.id} {...item} updateLikes={updateLikes} />);

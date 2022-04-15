@@ -1,31 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, connect } from 'react-redux';
 
+import { addNewUser } from '../../reducers/users/usersReducer';
+import usersReducer from '../../reducers/users/usersReducer';
 import './Form.css';
 
-const Form = ({ /* users, */ updateState }) => {//!
+const Form = () => {
+    const dispatch = useDispatch();
+
     const [newUser, setNewUser] = useState({
         name: '',
         avatar: '',
-        id: 5,
+        id: '',
         likes: 0,
-        top: [
-            {
-                id: 1,
-                description: {
-                    title: '',
-                    art: '',
-                },
-
-            }
-        ],
+        top: [],
     });
 
     const handleChange = ({ target: { value } }) => {
         setNewUser({
             name: value.trim(), 
             avatar: null ?? '/images/avatars/default-user.png', 
-            id: newUser.id++, 
+            id: '', 
             likes: 0,
             top: [
                 {
@@ -34,51 +29,71 @@ const Form = ({ /* users, */ updateState }) => {//!
                         title: 'Xenosaga Episode I: Der Wille zur Macht',
                         art: null ?? '/images/user-demo.jpg',
                     },
-                    // id: 2,
-                    // description: {
-                    //     title: 'Xenosaga Episode II: Jenseits von Gut und Böse',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 3,
-                    // description: {
-                    //     title: 'Xenosaga Episode III: Also Sprach Zarathustra',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 4,
-                    // description: {
-                    //     title: 'Xenogears',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 5,
-                    // description: {
-                    //     title: 'Xenoblade Chronicles',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 6,
-                    // description: {
-                    //     title: 'Final Fantasy X',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 7,
-                    // description: {
-                    //     title: 'Persona 3',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 8,
-                    // description: {
-                    //     title: 'Persona 5',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 9,
-                    // description: {
-                    //     title: '.hack//G.U.',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
-                    // id: 10,
-                    // description: {
-                    //     title: 'Infinite Undiscovery',
-                    //     art: null ?? '/images/user-demo.jpg',
-                    // },
+                },
+                {
+                    id: 2,
+                        description: {
+                            title: 'Xenosaga Episode II: Jenseits von Gut und Böse',
+                            art: null ?? '/images/user-demo.jpg',
+                        },
+                },
+                {
+
+                    id: 3,
+                    description: {
+                        title: 'Xenosaga Episode III: Also Sprach Zarathustra',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                },
+                {
+
+                    id: 4,
+                    description: {
+                        title: 'Xenogears',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                },
+                {
+                    id: 5,
+                    description: {
+                        title: 'Xenoblade Chronicles',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                },
+                {
+                    id: 6,
+                    description: {
+                        title: 'Final Fantasy X',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                },
+                {
+                    id: 7,
+                    description: {
+                        title: 'Persona 3',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                },
+                {
+                    id: 8,
+                    description: {
+                        title: 'Persona 5',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                },
+                {
+                    id: 9,
+                    description: {
+                        title: '.hack//G.U.',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
+                },
+                {
+                    id: 10,
+                    description: {
+                        title: 'Infinite Undiscovery',
+                        art: null ?? '/images/user-demo.jpg',
+                    },
                 }
             ]
         });
@@ -87,11 +102,12 @@ const Form = ({ /* users, */ updateState }) => {//!
     const handleSubmit = e => {
         e.preventDefault();
 
-        // setNewUser('');
+        dispatch(addNewUser(newUser));
+        setNewUser('');
     }
 
     useEffect(() => {
-        console.log(newUser, '->', /* usersArr */);
+        console.log(newUser, '->');
     }, [newUser])
 
     return (
@@ -102,25 +118,22 @@ const Form = ({ /* users, */ updateState }) => {//!
                     className="form-top__input" 
                     type="text" 
                     name={newUser.name} 
-                    value={newUser.name} 
+                    value={newUser.name || ''} 
                     placeholder="Enter your username"
                     onChange={handleChange}
                 />
                 <br/>
-                <button 
+                <input
                     className="form-top__btn btn" 
                     type="submit" 
-                    onClick={() => updateState(newUser)}
-                >
-                    Submit
-                </button>
+                    value="Submit"
+                />
             </form>
         </div>
     )
 }
 
-Form.propTypes = {
-    updateState: PropTypes.func.isRequired,
-}
+const mapStateToProps = state => ({ users: state.usersReducer.users });
+const mapDispatchToProps = { usersReducer };
 
-export default Form;
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

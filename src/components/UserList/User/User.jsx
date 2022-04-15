@@ -14,7 +14,7 @@ const User = ({ name, avatar, id, likes, top, updateLikes }) => {
         setCounter(counter + 1);
         console.log(color.clicked);
 
-        !color.clicked && setColor({backgroundColor: 'red', clicked: true});
+        !color.clicked && setColor({color: 'red', clicked: true});
         updateLikes(id, counter + 1); //TODO
     }
     

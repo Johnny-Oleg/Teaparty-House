@@ -2,12 +2,24 @@ import React from 'react';
 import PropTypes from "prop-types";
 
 const BotMessage = ({ message }) => {
-    // console.log(message);
+    const bot = message => {
+        switch (message) {
+            case '@Johnny hi':
+               return 'Hey';
+            case '@Johnny привет':
+                return 'Привет!'
+            default:
+                return 'Hello from bot! <3';
+        }
+    }
+
+    const answer = bot(message);
+
     return (
         <div>
             <div className="chat-bot__message">
             <span>@Johnny</span>
-            <p>{'Hello from bot! <3'}</p>
+            <p>{answer}</p>
         </div>
         </div>
     )

@@ -2,21 +2,27 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const reducers = combineReducers({
+import usersReducer from './reducers/users/usersReducer';
+import playlistReducer from './reducers/playlist/playlistReducer';
 
+const rootReducer = combineReducers({
+    usersReducer,
+    playlistReducer,
 })
 
-const initialState = {
-  users: [],
-  playlist: [],
-};
+// const initialState = {
+//     users: [],
+//     playlist: [],
+// };
 
 const middleware = [thunk];
 
 const store = createStore(
-  reducers,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+    rootReducer,
+    // initialState,
+    composeWithDevTools(applyMiddleware(...middleware))
 );
+
+// store.subscribe(store => console.log(store.getState()));
 
 export default store;

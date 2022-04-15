@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-
-import Message from './Message/Message';
-import BotMessage from './BotMessage/BotMessage';
 import './Chat.css';
+
+import React, { useEffect, useRef, useState } from 'react';
+
+import BotMessage from './BotMessage/BotMessage';
+import Message from './Message/Message';
 
 const Chat = () => {
     const [messages, setMessages] = useState([]);
@@ -35,7 +36,7 @@ const Chat = () => {
                
                 <div ref={scroll}></div>
             </div>
-            <form className="chat-form" action="" onSubmit={sendMessage}>
+            <form className="chat-form" onSubmit={sendMessage}>
                 <input 
                     type="text" 
                     value={messageValue} 
