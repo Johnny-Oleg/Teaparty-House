@@ -33,13 +33,15 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: [
-                    ...state.users.map(user => {
-                        if (user.id === action.payload.id) {
-                            user.likes = action.payload.likes;
-                        }
+                    // ...state.users.map(user => {
+                    //     if (user.id === action.payload.id) {
+                    //         user.likes = action.payload.likes;
+                    //     }
 
-                        return user;
-                    }),
+                    //     return user;
+                    // }),
+                    ...state.users.map(user => user.id === action.payload.id ?
+                        { ...user, likes: action.payload.likes } : user.likes),
                 ],
             };
         default:

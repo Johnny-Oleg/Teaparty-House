@@ -112,7 +112,7 @@ const App = () => {
             <div className={`container `}>
                 <div className="section">
                     <JrpgOfTheDay />
-                    {/* <Player playlist={music} /> */}
+                    <Player playlist={music} />
                     <img src="./images/Sire.png" alt="sir" />
                     <button className="btn" onClick={handleClick}>
                         <span>Show Users</span>
@@ -135,7 +135,7 @@ const App = () => {
             </div>
             <Footer />
         </div>
-    );
+    )
 };
 
 export default App;

@@ -8,6 +8,23 @@ const Player = ({ playlist }) => {
     const [track, setTrack] = useState({});
     const audio = useRef(track);
     
+    //  useEffect(() => {
+    //     const fetchRandomTrack = async () => {
+    //         const randomTrack = await random(playlist);
+    //         console.log(randomTrack, 'Component did mount (of the day)');
+            
+    //         setTrack(randomTrack);
+    //     }
+        
+    //     track ?? fetchRandomTrack();
+
+    //     audio.current.addEventListener('ended', () => setTrack(track));
+        
+    //     const audioNode = audio.current;
+
+    //     return () => audioNode.removeEventListener('ended', () => setPlaying(false));
+    // }, [track]);
+
     useEffect(() => {
         setTrack(random(playlist));
         
