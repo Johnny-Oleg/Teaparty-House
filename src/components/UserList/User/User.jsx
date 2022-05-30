@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
-import { addUserLike } from '../../../reducers/users/usersReducer';
+import { addUserLike } from '../../../reducers/users/usersSlice';
 import JrpgList from './JrpgList/JrpgList';
 import './User.css';
 

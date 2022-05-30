@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 
 import BotMessage from './BotMessage/BotMessage';
 import Message from './Message/Message';
@@ -13,7 +14,7 @@ const Chat = () => {
         e.preventDefault();
 
         const messagesCopy = [...messages, 
-            {id: Math.floor(Math.random() * 100), text: messageValue}
+            {id: nanoid(), text: messageValue}
         ]
         
         setMessages(messagesCopy);

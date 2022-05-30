@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchUsers } from './reducers/users/usersReducer';
-import { fetchMusic } from './reducers/playlist/playlistReducer';
-import Chat from './components/Chat/Chat';
+import { fetchUsers } from './reducers/users/usersSlice';
+import { fetchMusic } from './reducers/playlist/playlistSlice';
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
+import Video from './components/Video/Video';
 import JrpgOfTheDay from './components/JrpgOfTheDay/JrpgOfTheDay';
 import Player from './components/AudioPlayer/Player';
-import UserList from './components/UserList/UserList';
 import UsersOnline from './components/UsersOnline/UsersOnline';
-import Video from './components/Video/Video';
+import UserList from './components/UserList/UserList';
+import Chat from './components/Chat/Chat';
 import Widgets from './components/Widgets/Widgets';
 import Footer from './components/Footer/Footer';
 import data from './database/users.json';
@@ -32,16 +32,22 @@ import './App.css';
 const App = () => {
     const [visibleList, setVisible] = useState(false);
     const [themeDark, setThemeDark] = useState(false);
-    const users = useSelector(state => state.usersReducer.users);
+    const users = useSelector(state => state.users.users);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchUsers(data.users));
-        dispatch(fetchMusic(playlist.music));
+        const fecthData = () => {
+            dispatch(fetchUsers(data.users));
+            dispatch(fetchMusic(playlist.music));
 
-        console.log('Component did mount', data.users);
+            console.log('Component did mount', data.users, users);
+        }
 
-        return () => console.log('Component did update');
+        fecthData();
+
+        return () => {
+            console.log('Component did update', users);
+        }
     }, []);
 
     useEffect(() => {

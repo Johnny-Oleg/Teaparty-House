@@ -5,19 +5,9 @@ import './JrpgOfTheDay.css';
 
 const JrpgOfTheDay = () => {
     const [jrpg, setJrpg] = useState(null);
-    const users = useSelector(state => state.usersReducer.users);
+    const users = useSelector(state => state.users.users);
     
     const random = arr => arr[Math.floor(Math.random() * arr.length)];
-
-    // useLayoutEffect(() => {
-    //     // window.addEventListener('load', () => setJrpg(randomJrpg));
-
-    //     console.log(jrpg, 'Component did mount (of the day)');
-    // }, [jrpg, randomJrpg]);
-
-    // const jrpgList = users.map(user => user.top.map(item => item.description));
-    // const randomJrpg = useMemo(() => random([...new Set(jrpgList.flat())]), []);
-    // const { title, art } = randomJrpg ?? '';
 
     useEffect(() => {
         const fetchRandomJrpg = async () => {
