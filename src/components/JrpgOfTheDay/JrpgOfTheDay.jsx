@@ -1,43 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 import './JrpgOfTheDay.css';
 
-const random = arr => arr[Math.floor(Math.random() * arr.length)];
-
-const JrpgOfTheDay = ({ users }) => {
-    const [jrpg, setJrpg] = useState({});
-
-    const jrpgListTitle = users.map(user => user.top.map(item => item.description));
-    const randomJrpgTitle = random([...new Set(jrpgListTitle.flat())]);
-    console.log(randomJrpgTitle);
+const JrpgOfTheDay = () => {
+    const [jrpg, setJrpg] = useState(null);
+    const users = useSelector(state => state.usersReducer.users);
     
+    const random = arr => arr[Math.floor(Math.random() * arr.length)];
+
+    // useLayoutEffect(() => {
+    //     // window.addEventListener('load', () => setJrpg(randomJrpg));
+
+    //     console.log(jrpg, 'Component did mount (of the day)');
+    // }, [jrpg, randomJrpg]);
+
+    // const jrpgList = users.map(user => user.top.map(item => item.description));
+    // const randomJrpg = useMemo(() => random([...new Set(jrpgList.flat())]), []);
+    // const { title, art } = randomJrpg ?? '';
+
     useEffect(() => {
-        // const jrpgListTitle = users.map(user => user.top.map(item => item.description.title));
-        // const randomJrpgTitle = random([...new Set(jrpgListTitle.flat())]);
-        // console.log(randomJrpgTitle, 'wtf?');
-        // window.addEventListener('DOMContentLoaded', (e) => setJrpg(randomJrpgTitle));
+        const fetchRandomJrpg = async () => {
+            const jrpgList = await users.map(user => user.top.map(item => item.description));
+            const randomJrpg = await random([...new Set(jrpgList.flat())]);
+            console.log(randomJrpg, 'Component did mount (of the day)');
+            
+            setJrpg(randomJrpg);
+        }
+        
+        jrpg ?? fetchRandomJrpg();
+    }, [jrpg, users]);
 
-        window.addEventListener('load', () => setJrpg(randomJrpgTitle)); //?
-        console.log(jrpg, 'Component did mount (of the day)');
-    }, [jrpg, randomJrpgTitle]);
-
-    // window.addEventListener('load', () => setJrpg(randomJrpgTitle)); //?
+    const { title, art } = jrpg ?? '';
 
     return (
         <div className="day__container">
             <span>JRPG of the day:</span>
-            <span>{jrpg?.title}</span>
+            <span>{title}</span>
             <img
-                src={process.env.PUBLIC_URL + jrpg?.art} 
+                src={process.env.PUBLIC_URL + art} 
                 alt="jrpg" 
             />
         </div>
     )
-}
-
-JrpgOfTheDay.propTypes = {
-    users: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default JrpgOfTheDay;

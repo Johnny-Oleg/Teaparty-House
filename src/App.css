@@ -1,12 +1,28 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('./fonts/PressStart2P-Regular.woff2') format('woff2'),
+        url('./fonts/PressStart2P-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
 html {
     box-sizing: border-box;
-    margin: 0 auto;
 }
 
 *,
 *::after,
 *::before {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* font-family: 'Press Start 2P', cursive; */
+    /* font-weight: 400; */
+    background-color: #F1F2FE;
 }
 
 ul, li {
@@ -38,7 +54,9 @@ ul, li {
 }
 
 .container {
-    background-color: #F1F2FE;
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .section {
@@ -144,31 +162,22 @@ ul, li {
     right: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .app.dark .container {
     background-color: #282c34;
     color: #fff;
 }
 
-.app.dark .btn,
-.app.dark .sort-btn,
-.app.dark .chat-btn {
+:is(.app.dark) .btn,
+.sort-btn,
+.chat-btn {
     background: #4208be;
     color: #acacb1;
     border: 2px solid #acacb1;
 }
 
-.app.dark .btn:hover,
-.app.dark .sort-btn:hover,
-.app.dark .chat-btn:hover {
+:is(.app.dark) .btn:hover,
+.sort-btn:hover,
+.chat-btn:hover {
     color: #4208be;
     border: 2px solid #4208be;
     background: #acacb1;

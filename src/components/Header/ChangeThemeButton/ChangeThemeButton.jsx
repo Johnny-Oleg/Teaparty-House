@@ -27,7 +27,7 @@ const ChangeThemeButton = ({ handleTheme, theme }) => {
     return (
         <div className="theme-switch-wrapper">
             <label className="theme-switch" htmlFor="checkbox" onClick={handleTheme}>
-                <input className="checkbox" type="checkbox" checked={theme}/>
+                <input className="checkbox" type="checkbox" checked={theme} readOnly/>
                 <div className="slider round animated"></div>
             </label>
         </div>

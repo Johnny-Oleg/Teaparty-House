@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 // import FlipMove from 'react-flip-move';
 
 import User from './User/User';
 import './Userlist.css';
 
-const UserList = ({ users, updateLikes }) => {   
+const UserList = () => {   
+    const users = useSelector(state => state.usersReducer.users);
     const [sorted, setSorted] = useState(users);
     const [isSorted, setIsSorted] = useState(false);
 
@@ -14,12 +15,13 @@ const UserList = ({ users, updateLikes }) => {
        
        setSorted(sortedUsers);
        setIsSorted(!isSorted);
-    };
+    }
 
-    const defaultOrder = users.
-        map((item, index) => <User key={item.id} {...item} updateLikes={updateLikes} />);
-    const sortedOrder = sorted.
-        map((item, index) => <User key={item.id} {...item} updateLikes={updateLikes} />);
+    const defaultOrder = users
+        .map((user, index) => <User key={user.id} {...user} />);
+
+    const sortedOrder = sorted
+        .map((user, index) => <User key={user.id} {...user} />);
 
 
     return (
@@ -30,11 +32,6 @@ const UserList = ({ users, updateLikes }) => {
             </ul>
         </div>
     )
-}
-
-UserList.propTypes = {
-    users: PropTypes.arrayOf(PropTypes.object),
-    updateLikes: PropTypes.func.isRequired,
 }
 
 export default UserList;

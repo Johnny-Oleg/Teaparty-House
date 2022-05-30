@@ -1,18 +1,38 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
-const random = arr => arr[Math.floor(Math.random() * arr.length)];
-
-const Player = ({ playlist }) => {
+const Player = () => {
+    const [track, setTrack] = useState(null);
     const [playing, setPlaying] = useState(false);
-    const [track, setTrack] = useState({});
     const audio = useRef(track);
+    const playlist = useSelector(state => state.playlistReducer.playlist)
+    
+    const random = arr => arr[Math.floor(Math.random() * arr.length)];
+
+    const fetchRandomTrack = useCallback(async () => {
+        const randomTrack = await random(playlist);
+
+        setTrack(randomTrack);
+        console.log(randomTrack, 'fetch');
+    }, [playlist]);
+    
 
     useEffect(() => {
-        setTrack(random(playlist));
+        fetchRandomTrack();
+        console.log('first music');
+    }, [fetchRandomTrack]);
 
-        audio.current.addEventListener('ended', () => setTrack(track));
-    }, [track])
+    useEffect(() => {
+        audio.current.addEventListener('ended', () => {
+            setTrack(fetchRandomTrack);
+        })
+
+        console.log('re-track');
+        const audioNode = audio.current;
+
+        return () =>
+            audioNode.removeEventListener('ended', () => setPlaying(false));
+    }, [audio, fetchRandomTrack])    
     
     const toggle = () => {
         audio.current.paused ? audio.current.play() : audio.current.pause();
@@ -30,12 +50,34 @@ const Player = ({ playlist }) => {
                 autoPlay 
                 // loop
             />
-            <button className="btn" onClick={toggle}>{playing ? 'Pause' : 'Play'}</button>
-            <span>Now playing:</span>
-            <span>{playing ? track?.title : 'Paused... ¯\\_(ツ)_/¯'}</span>
+            <button className="btn" onClick={toggle}>
+                {playing ? 'Pause' : 'Play'}
+            </button>
+            <span>{playing ? 'Now playing:' : 'Paused... ¯\\_(ツ)_/¯'}</span>
+            <span>{track?.title}</span>
         </div>
     )
 }
+
+// useEffect(() => {
+    //     const fetchRandomTrack = async () => {
+    //         const randomTrack = await random(playlist);
+            
+    //         setTrack(randomTrack);
+    //     }
+
+    //     track ?? fetchRandomTrack();
+        
+    //     audio.current.addEventListener('ended', () => {
+    //         //setPlaying(false);
+    //         //setTrack(track);
+    //         setTrack(fetchRandomTrack);
+    //     })
+    //     console.log(track, 'track');
+    //     const audioNode = audio.current;
+
+    //     return () => audioNode.removeEventListener('ended', () => setPlaying(false));
+    // }, [track, audio])
 
 // const useAudio = track => {
 //     const [audio] = useState(new Audio(track));
@@ -63,9 +105,5 @@ const Player = ({ playlist }) => {
 //         </div>
 //     )
 // }
-
-Player.propTypes = {
-    playlist: PropTypes.arrayOf(PropTypes.object),
-}
 
 export default Player;

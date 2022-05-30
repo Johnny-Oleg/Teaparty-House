@@ -6,6 +6,10 @@
     overflow-y: scroll;
 }
 
+.chat-form {
+    margin-bottom: 20px;
+}
+
 .chat-btn {
     min-width: 100px;
     height: 30px;
@@ -36,7 +40,7 @@
     background: #FBFBFD;
 }
 
-.chat__message {
+.chat__message, .chat-bot__message {
     display: flex;
     margin: 5px;
     /* color: #FBFBFD; */
@@ -47,10 +51,14 @@
     color: #000;
 }
 
-.chat__message p {
-    min-width: 50px;
+.chat-bot__message span {
+    color: #1967d2;
+}
+
+.chat__message p, .chat-bot__message p {
+    min-width: 100px;
     height: auto;
-    padding: 10px 5px;
+    padding: 10px 10px;
     text-align: left;
     border: 2px solid #46B5EF;
     border-radius: 37px;
