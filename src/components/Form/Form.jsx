@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { addNewUser } from '../../reducers/users/usersReducer';
-import usersReducer from '../../reducers/users/usersReducer';
 import './Form.css';
 
 const Form = () => {
@@ -116,11 +115,11 @@ const Form = () => {
                 <label>Add your Top 10 JRPG</label>
                 <input 
                     className="form-top__input" 
-                    type="text" 
                     name={newUser.name} 
                     value={newUser.name || ''} 
-                    placeholder="Enter your username"
                     onChange={handleChange}
+                    type="text" 
+                    placeholder="Enter your username"
                 />
                 <br/>
                 <input
@@ -133,7 +132,4 @@ const Form = () => {
     )
 }
 
-const mapStateToProps = state => ({ users: state.usersReducer.users });
-const mapDispatchToProps = { usersReducer };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default Form;

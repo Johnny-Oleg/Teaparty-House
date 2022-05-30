@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useLayoutEffect, useMemo } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import usersReducer from '../../reducers/users/usersReducer';
 import './JrpgOfTheDay.css';
 
-const random = arr => arr[Math.floor(Math.random() * arr.length)];
-
-const JrpgOfTheDay = ({ users }) => {
+const JrpgOfTheDay = () => {
     const [jrpg, setJrpg] = useState(null);
+    const users = useSelector(state => state.usersReducer.users);
     
-    // useEffect(() => {
+    const random = arr => arr[Math.floor(Math.random() * arr.length)];
+
+    // useLayoutEffect(() => {
     //     // window.addEventListener('load', () => setJrpg(randomJrpg));
 
     //     console.log(jrpg, 'Component did mount (of the day)');
@@ -46,11 +45,4 @@ const JrpgOfTheDay = ({ users }) => {
     )
 }
 
-JrpgOfTheDay.propTypes = {
-    users: PropTypes.arrayOf(PropTypes.object),
-}
-
-const mapStateToProps = state => ({ users: state.usersReducer.users });
-// const mapDispatchToProps = { usersReducer };
-
-export default connect(mapStateToProps)(JrpgOfTheDay);
+export default JrpgOfTheDay;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tilt from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 
 const Jrpg = ({ id, description }) => {
     console.log(description);
@@ -10,11 +10,10 @@ const Jrpg = ({ id, description }) => {
             <br/>
             <br/>
             <Tilt 
-                className="Tilt" 
                 options={{max : 40, perspective: 1000, easing: "cubic-bezier(.03,.98,.52,.99)"}} 
                 /* style={{ height: 250, width: 250 }} */ 
             >
-                <img className="Tilt-inner"
+                <img 
                     src={process.env.PUBLIC_URL + description?.art} 
                     style={{width: "150px", height: "auto"}} 
                     alt="jrpg" 

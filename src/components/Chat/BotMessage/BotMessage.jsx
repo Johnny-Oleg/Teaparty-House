@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const BotMessage = ({ message }) => {
     const bot = message => {
@@ -13,13 +13,13 @@ const BotMessage = ({ message }) => {
         }
     }
 
-    const answer = bot(message);
+    const response = bot(message);
 
     return (
         <div>
             <div className="chat-bot__message">
             <span>@Johnny</span>
-            <p>{answer}</p>
+            <p>{response}</p>
         </div>
         </div>
     )
