@@ -6,7 +6,7 @@ import User from './User/User';
 import './Userlist.css';
 
 const UserList = () => {   
-    const users = useSelector(state => state.usersReducer.users);
+    const users = useSelector(state => state.users.users);
     const [sorted, setSorted] = useState(users);
     const [isSorted, setIsSorted] = useState(false);
 

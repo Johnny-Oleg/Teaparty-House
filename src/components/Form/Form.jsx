@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addNewUser } from '../../reducers/users/usersReducer';
+import { addNewUser } from '../../reducers/users/usersSlice';
 import './Form.css';
 
 const Form = () => {

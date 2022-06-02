@@ -5,7 +5,7 @@ const Player = () => {
     const [track, setTrack] = useState(null);
     const [playing, setPlaying] = useState(false);
     const audio = useRef(track);
-    const playlist = useSelector(state => state.playlistReducer.playlist)
+    const playlist = useSelector(state => state.playlist.playlist)
     
     const random = arr => arr[Math.floor(Math.random() * arr.length)];
 

@@ -1,20 +1,15 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { configureStore } from '@reduxjs/toolkit';
 
-import usersReducer from '../reducers/users/usersReducer';
-import playlistReducer from '../reducers/playlist/playlistReducer';
+import usersReducer from '../reducers/users/usersSlice';
+import playlistReducer from '../reducers/playlist/playlistSlice';
+import botReducer from '../reducers/bot/botSlice';
 
-const rootReducer = combineReducers({
-    usersReducer,
-    playlistReducer,
+const store = configureStore({
+    reducer: {
+        users: usersReducer,
+        playlist: playlistReducer,
+        bot: botReducer
+    }
 })
-
-const middleware = [thunk];
-
-const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(...middleware))
-)
 
 export default store;
