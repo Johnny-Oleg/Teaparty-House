@@ -36,19 +36,19 @@ const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const fecthData = () => {
+        const fetchData = () => {
             dispatch(fetchUsers(data.users));
             dispatch(fetchMusic(playlist.music));
 
             console.log('Component did mount', data.users, users);
         }
 
-        fecthData();
+        fetchData();
 
         return () => {
             console.log('Component did update', users);
         }
-    }, []);
+    }, [data.users]);
 
     useEffect(() => {
         const currentTheme = localStorage.getItem('theme-color');

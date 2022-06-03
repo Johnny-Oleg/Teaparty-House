@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const BotMessage = ({ message }) => {
     const bot = message => {
-        switch (message) {
+        switch (message.toLowerCase()) {
             case '@Johnny hi':
                return 'Hey';
             case '@Johnny привет':

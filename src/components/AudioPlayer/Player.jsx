@@ -25,6 +25,7 @@ const Player = () => {
     useEffect(() => {
         audio.current.addEventListener('ended', () => {
             setTrack(fetchRandomTrack);
+            console.log('re-track');
         })
 
         console.log('re-track');
@@ -58,26 +59,6 @@ const Player = () => {
         </div>
     )
 }
-
-// useEffect(() => {
-    //     const fetchRandomTrack = async () => {
-    //         const randomTrack = await random(playlist);
-            
-    //         setTrack(randomTrack);
-    //     }
-
-    //     track ?? fetchRandomTrack();
-        
-    //     audio.current.addEventListener('ended', () => {
-    //         //setPlaying(false);
-    //         //setTrack(track);
-    //         setTrack(fetchRandomTrack);
-    //     })
-    //     console.log(track, 'track');
-    //     const audioNode = audio.current;
-
-    //     return () => audioNode.removeEventListener('ended', () => setPlaying(false));
-    // }, [track, audio])
 
 // const useAudio = track => {
 //     const [audio] = useState(new Audio(track));

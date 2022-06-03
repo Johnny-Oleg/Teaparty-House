@@ -6,13 +6,17 @@ import './Header.css';
 const Header = ({ handleTheme, theme }) => {
     return (
         <header className="header">
-            <div className="logo">
-                <img src="./images/teaparty-house-logo.png" alt="logo"/>
+            <div className="container">
+                <div className="header__content">
+                    <div className="logo">
+                        <img src="./images/teaparty-house-logo.png" alt="logo"/>
+                    </div>
+                    <ChangeThemeButton handleTheme={handleTheme} theme={theme} />
+                    <span>Teaparty House | ティーパーティーハウス</span>
+                    <span>Welcome, gentlemen! | ようこそ、殿方！</span>           
+                </div> 
             </div>
-            <ChangeThemeButton handleTheme={handleTheme} theme={theme} />
-            <span>Teaparty House | ティーパーティーハウス</span>
-            <span>Welcome, gentlemen! | ようこそ、殿方！</span>
-      </header>
+        </header>
     )
 }
 

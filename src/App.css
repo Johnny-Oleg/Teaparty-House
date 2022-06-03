@@ -54,7 +54,7 @@ ul, li {
 }
 
 .container {
-    max-width: 1420px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -167,17 +167,16 @@ ul, li {
     color: #fff;
 }
 
-:is(.app.dark) .btn,
-.sort-btn,
-.chat-btn {
+.app.dark :is(.btn, .sort-btn, .chat-btn, .form-top__btn) {
     background: #4208be;
     color: #acacb1;
     border: 2px solid #acacb1;
 }
 
-:is(.app.dark) .btn:hover,
-.sort-btn:hover,
-.chat-btn:hover {
+.app.dark :is(.btn,
+.sort-btn,
+.chat-btn,
+.form-top__btn):hover {
     color: #4208be;
     border: 2px solid #4208be;
     background: #acacb1;

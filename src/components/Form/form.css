@@ -22,8 +22,9 @@ form > label {
 }
 
 .form-top__btn {
-    width: 100px;
+    width: 60px;
     height: 30px;
+    padding: 20px;
     color: #fff;
     background-color: #1967D2;
     border-radius: 30px;

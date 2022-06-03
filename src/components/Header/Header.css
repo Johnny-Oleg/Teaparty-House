@@ -1,15 +1,15 @@
 .header {
     background-color: #515868;
-    min-height: 10vh;
-    padding: 10px 30px;
-    display: flex;
-    /* flex-direction: column; */
-    /* flex-direction: row; */
-    align-items: center;
-    /* justify-content: center; */
-    justify-content: space-between;
-    font-size: calc(5px + 2vmin);
     color:#FFF;
+}
+
+.header__content {
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    font-size: calc(5px + 2vmin);
 }
 
 .logo {
