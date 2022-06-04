@@ -14,8 +14,8 @@
 }
 
 .footer__text {
-	font-size: 18px;
-	line-height: 18px;
+	/* font-size: 18px;
+	line-height: 18px; */
 	color: #515868;
 	text-transform: uppercase;
 }
@@ -33,6 +33,7 @@
 	width: 35px;
 	height: 35px;
 	pointer-events: none;
+	image-rendering: pixelated;
 }
 
 @media (prefers-reduced-motion: no-preference) {

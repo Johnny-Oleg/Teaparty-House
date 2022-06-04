@@ -24,10 +24,11 @@ const JrpgOfTheDay = () => {
     const { title, art } = jrpg ?? '';
 
     return (
-        <div className="day__container">
-            <span>JRPG of the day:</span>
-            <span>{title}</span>
+        <div className="selection nes-container is-rounded">
+            <span className="selection__title">JRPG of the day:</span>
+            <span className="selection__subtitle">{title}</span>
             <img
+                className="selection__img"
                 src={process.env.PUBLIC_URL + art} 
                 alt="jrpg" 
             />

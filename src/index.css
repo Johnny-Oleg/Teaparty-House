@@ -93,13 +93,69 @@ input, select {
     vertical-align:middle;
 }
 
+/* reset */
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('./fonts/PressStart2P-Regular.woff2') format('woff2'),
+        url('./fonts/PressStart2P-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DotGothic16';
+    src: url('./fonts/DotGothic16-Regular.woff2') format('woff2'),
+        url('./fonts/DotGothic16-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Misaki Mincho';
+    src: url('./fonts/misaki_mincho.woff2') format('woff2'),
+        url('./fonts/misaki_mincho.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* font-family: 'DotGothic16', sans-serif; */
+    background-color: #F1F2FE;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul, li {
+    list-style: none;
+}
+
+/* body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

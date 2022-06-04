@@ -1,0 +1,20 @@
+.audio {
+	width: 500px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.audio__info {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.player__btn {
+	width: 104px;
+	height: auto;
+}

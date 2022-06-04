@@ -4,17 +4,32 @@
 }
 
 .header__content {
-    min-height: 10vh;
+    /* min-height: 10vh; */
+    height: 70px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 30px;
-    font-size: calc(5px + 2vmin);
+    align-items: center;
+    padding: 10px 0;
+    /* font-size: calc(5px + 2vmin); */
+}
+
+:is(.header__name, .header__greetings) span {
+    font-family: 'Misaki Mincho', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    vertical-align: top;
 }
 
 .logo {
-    width: 200px;
-    height: auto;
+    width: 150px;
+    height: 50px;
+    /* height: auto; */
     background-color: #F1F2FE;
     border-radius: 50px;
+}
+
+.logo__img {
+    width: 140px;
+    height: auto;
 }

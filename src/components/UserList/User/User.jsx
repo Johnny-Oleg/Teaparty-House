@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+// import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import "nes.css/css/nes.min.css";
 
 import { addUserLike } from '../../../reducers/users/usersSlice';
 import JrpgList from './JrpgList/JrpgList';
@@ -39,12 +40,20 @@ const User = ({ name, avatar, id, likes, top }) => {
                 <button className="btn" onClick={handleClick}>
                     <span>Top 10</span>
                 </button>
-                <FavoriteBorderIcon 
+                <img 
                     className="user__btn"
                     fontSize="small" 
                     style={color} 
                     onClick={() => handleLike(id)} 
+                    src=""
+                    alt=""
                 />
+                {/* <FavoriteBorderIcon 
+                    className="user__btn"
+                    fontSize="small" 
+                    style={color} 
+                    onClick={() => handleLike(id)} 
+                /> */}
                 <span>{likes}</span>
                 <div className="item__list">
                     {visibleList && <JrpgList top={top} />}

@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
+import './Player.css';
+
 const Player = () => {
     const [track, setTrack] = useState(null);
     const [playing, setPlaying] = useState(false);
     const audio = useRef(track);
-    const playlist = useSelector(state => state.playlist.playlist)
+    const playlist = useSelector(state => state.playlist.playlist);
     
     const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
@@ -42,8 +44,9 @@ const Player = () => {
     }
 
     return (
-        <div>
+        <div className="audio nes-container is-rounded">
             <audio 
+                className="audio__track"
                 ref={audio} 
                 src={process.env.PUBLIC_URL + `${track?.track}.mp3`} 
                 type="audio/mpeg" 
@@ -51,11 +54,13 @@ const Player = () => {
                 autoPlay 
                 // loop
             />
-            <button className="btn" onClick={toggle}>
+            <div className="audio__info">
+                <span>{playing ? 'Now playing:' : 'Paused... ¯\\_(ツ)_/¯'}</span>
+                <span>{track?.title}</span>
+            </div>
+            <button className="player__btn nes-btn is-primary" onClick={toggle}>
                 {playing ? 'Pause' : 'Play'}
             </button>
-            <span>{playing ? 'Now playing:' : 'Paused... ¯\\_(ツ)_/¯'}</span>
-            <span>{track?.title}</span>
         </div>
     )
 }
