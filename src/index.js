@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 
 import App from './App';
+import 'nes.css/css/nes.min.css';
 import './index.css';
 
 const root = createRoot(document.getElementById('root'));

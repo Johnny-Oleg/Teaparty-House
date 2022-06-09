@@ -26,7 +26,7 @@ const UserList = () => {
 
     return (
         <div>
-            <button className="sort-btn" onClick={handleSort}>Sort users</button>
+            <button className="nes-btn is-primary" onClick={handleSort}>Sort users</button>
             <ul className="user__list">
                 {isSorted ? sortedOrder : defaultOrder}
             </ul>
