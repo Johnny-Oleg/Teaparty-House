@@ -5,7 +5,7 @@ import Jrpg from './Jrpg/Jrpg';
 
 const JrpgList = ({ top }) => {
     return (
-        <ul>
+        <ul className="user-top__list">
             {top.map(jrpg => <Jrpg key={jrpg.id} {...jrpg} />)}
         </ul>
     )

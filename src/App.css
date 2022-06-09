@@ -1,39 +1,8 @@
-@font-face {
-    font-family: 'Press Start 2P';
-    src: url('./fonts/PressStart2P-Regular.woff2') format('woff2'),
-        url('./fonts/PressStart2P-Regular.woff') format('woff');
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-}
-
-html {
-    box-sizing: border-box;
-}
-
-*,
-*::after,
-*::before {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    /* font-family: 'Press Start 2P', cursive; */
-    /* font-weight: 400; */
-    background-color: #F1F2FE;
-}
-
-ul, li {
-    list-style: none;
-}
-
 .app {
     height: 100vh; /*?? auto */
     /* display: flex; */
     text-align: center;
-    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Roboto Mono', monospace; */
         /* background-attachment: fixed; */
 }
 
@@ -54,7 +23,7 @@ ul, li {
 }
 
 .container {
-    max-width: 1420px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -64,9 +33,9 @@ ul, li {
     justify-content: space-between; /* space-around */
     align-items: center;
     width: 100%;
-    height: 200px;
-    padding-top: 10px;
-    padding-right: 20px;
+    height: 250px;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .section > div {
@@ -167,17 +136,16 @@ ul, li {
     color: #fff;
 }
 
-:is(.app.dark) .btn,
-.sort-btn,
-.chat-btn {
+.app.dark :is(.btn, .sort-btn, .chat-btn, .form-top__btn) {
     background: #4208be;
     color: #acacb1;
     border: 2px solid #acacb1;
 }
 
-:is(.app.dark) .btn:hover,
-.sort-btn:hover,
-.chat-btn:hover {
+.app.dark :is(.btn,
+.sort-btn,
+.chat-btn,
+.form-top__btn):hover {
     color: #4208be;
     border: 2px solid #4208be;
     background: #acacb1;

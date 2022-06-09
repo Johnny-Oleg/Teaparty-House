@@ -1,5 +1,5 @@
-.item__list {
-    /* display: flex;
+.user-top__list {
+    display: flex;
     flex-direction: column;
-    align-items: center; */
+    align-items: center;
 }

@@ -1,0 +1,33 @@
+.top__list-item {
+	height: 260px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.list-item__img-wrapper {
+	flex: 1 0 150px;
+	align-self: center;
+}
+
+.list-item__img {
+	width: 150px; 
+	height: auto;
+}
+
+.list-item__info {
+	max-width: 370px;
+	flex: 2 0 360px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.list-item__title {
+	
+}
+
+.list-item__rating {
+	align-self: flex-end;
+}

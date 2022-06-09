@@ -1,18 +1,18 @@
-.day__container {
+.selection {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 450px;
     height: 200px;
     align-items: center; 
-    padding-right: 50px;   /* padding-right: 150px; */
 }
 
-.day__container span {
+.selection__title,
+.selection__subtitle {
     margin-bottom: 5px;
-    font-weight: 400;
+    font-size: 14px;
 }
 
-.day__container img {
+.selection__img {
     width: 100px; 
     height: auto;
 }
