@@ -1,13 +1,13 @@
 .user {
     width: 600px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .user__info {
     height: 250px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -18,11 +18,12 @@
     font-size: 24px;
 }
 
-.user__img {
-    border: 3px solid black;
+.user__avatar {
+    margin: auto;
 }
 
 .user__stats {
+    width: 260px;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -35,22 +36,29 @@
 }
 
 .user__btn {
-    max-width: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.user__btn span {
-    margin-left: 20px;
+.user__btn-text,
+.user__btn-num {
     font-size: 18px;
     line-height: 26px;
     vertical-align: super;
 }
 
+.user__btn-text {
+    width: 145px;
+    text-align: left;
+}
+
+.user__btn-num {
+    width: 60px;
+    text-align: right;
+}
+
 .user__btn .nes-icon.is-medium {
     transform: scale(2);
 }
-
-/* .item__List {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */

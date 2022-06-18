@@ -25,13 +25,15 @@ const JrpgOfTheDay = () => {
 
     return (
         <div className="selection nes-container is-rounded">
-            <span className="selection__title">JRPG of the day:</span>
-            <span className="selection__subtitle">{title}</span>
-            <img
-                className="selection__img"
-                src={process.env.PUBLIC_URL + art} 
-                alt="jrpg" 
-            />
+            <div className="selection__wrapper">
+                <h4 className="selection__title">JRPG of the day:</h4>
+                <img
+                    className="selection__img"
+                    src={process.env.PUBLIC_URL + art} 
+                    alt="jrpg" 
+                />
+            </div>
+            <p className="selection__subtitle">{title}</p>
         </div>
     )
 }

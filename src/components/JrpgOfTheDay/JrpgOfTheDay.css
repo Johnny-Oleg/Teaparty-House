@@ -1,9 +1,14 @@
 .selection {
-    display: flex;
-    flex-direction: column;
-    width: 450px;
+    width: 600px;
     height: 200px;
+    display: flex;
+    justify-content: space-around;
     align-items: center; 
+}
+
+.selection__wrapper {
+    width: 240px;
+    height: 100%;
 }
 
 .selection__title,
@@ -12,7 +17,13 @@
     font-size: 14px;
 }
 
+.selection__title,
+.selection__subtitle {
+    align-self: flex-start;
+}
+
 .selection__img {
-    width: 100px; 
-    height: auto;
+    /* width: 100px; 
+    height: auto; */
+    height: 130px;
 }

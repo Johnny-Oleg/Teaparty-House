@@ -42,28 +42,30 @@ const User = ({ name, avatar, id, likes, top }) => {
                     <div
                         className="user__btn"
                         onClick={() => handleLike(id)} 
-                    
                     >
+                        <span className="user__btn-text">Favorite</span>
                         {clicked 
                             ? <i class="nes-icon heart"></i>
                             : <i class="nes-icon is-empty heart"></i>
                         }
-                        <span>{likes}</span>
+                        <span className="user__btn-num">{likes}</span>
                     </div>
                     <div
                         className="user__btn"
                         onClick={() => handleLike(id)} 
-                    
                     >
+                        <span className="user__btn-text">Likes</span>
                         {clicked 
                             ? <i class="nes-icon like"></i>
                             : <i class="nes-icon is-empty like"></i>
                         }
-                        <span>{likes}</span>
+                        <span className="user__btn-num">{likes}</span>
                     </div>
-                    <button className="nes-btn is-primary" onClick={handleClick}>
-                        Top 10
-                    </button>
+                    <div className="btn-wrapper">
+                        <button className="nes-btn is-primary" onClick={handleClick}>
+                            Top 10
+                        </button>
+                    </div>
                 </div>
             </div>
 
