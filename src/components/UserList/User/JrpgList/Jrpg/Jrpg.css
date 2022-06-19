@@ -24,10 +24,27 @@
 	align-items: center;
 }
 
+.list-item__info .nes-badge {
+	width: 4em;
+	align-self: flex-end;
+    margin-right: 35px;
+}
+
 .list-item__title {
-	
+	height: 50%;
+	font-size: 18px;
+	line-height: 26px;
 }
 
 .list-item__rating {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 	align-self: flex-end;
+}
+
+.item__rating-text {
+	font-size: 18px;
+	line-height: 26px;
 }

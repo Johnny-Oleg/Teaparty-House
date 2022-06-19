@@ -88,8 +88,8 @@ const App = () => {
                     </div>
                     <div className="selection__inner">
                         <img src="./images/Sire.png" alt="sir" />
-                        <button className="btn" onClick={handleClick}>
-                            <span>Show Users</span>
+                        <button className="nes-btn is-primary" onClick={handleClick}>
+                            Show Users
                         </button>
                         <br />
                         <span>Total users: {countUsers}</span>

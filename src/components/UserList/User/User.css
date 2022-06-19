@@ -35,17 +35,25 @@
     line-height: 30px;
 }
 
+.user__name.nes-badge {
+    /* width: 100%; */
+}
+
+.user__name.nes-badge span {
+    left: 0;
+}
+
 .user__btn {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .user__btn-text,
 .user__btn-num {
-    font-size: 18px;
-    line-height: 26px;
+    /* font-size: 18px;
+    line-height: 26px; */
     vertical-align: super;
 }
 

@@ -5,21 +5,16 @@
     min-width: fit-content;
     overflow-y: scroll;
     margin-top: 30px;
-    /* align-items: center;
-    display: flex;
-    flex-direction: column; */
-    /* align-items: flex-start; */
 }
 
 .user__list::-webkit-scrollbar {
     display: none;
 }
 
-.sort-btn {
+/* .sort-btn {
     min-width: 100px;
     height: 40px;
     padding: 10px 10px;
-    /* margin: 5px; */
     font-family: 'Roboto Mono', monospace;
     font-style: normal;
     font-weight: bold;
@@ -43,4 +38,4 @@
     color: #46B5EF;
     border: 2px solid #46B5EF;
     background: #FBFBFD;
-}
+} */

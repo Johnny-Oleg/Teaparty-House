@@ -15,11 +15,11 @@
 .selection__subtitle {
     margin-bottom: 5px;
     font-size: 14px;
+    align-self: flex-start;
 }
 
-.selection__title,
 .selection__subtitle {
-    align-self: flex-start;
+    width: 300px;
 }
 
 .selection__img {
