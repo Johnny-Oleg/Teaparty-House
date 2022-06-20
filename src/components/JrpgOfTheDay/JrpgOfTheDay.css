@@ -1,18 +1,29 @@
 .selection {
-    display: flex;
-    flex-direction: column;
-    width: 450px;
+    width: 600px;
     height: 200px;
+    display: flex;
+    justify-content: space-around;
     align-items: center; 
+}
+
+.selection__wrapper {
+    width: 240px;
+    height: 100%;
 }
 
 .selection__title,
 .selection__subtitle {
     margin-bottom: 5px;
     font-size: 14px;
+    align-self: flex-start;
+}
+
+.selection__subtitle {
+    width: 300px;
 }
 
 .selection__img {
-    width: 100px; 
-    height: auto;
+    /* width: 100px; 
+    height: auto; */
+    height: 130px;
 }

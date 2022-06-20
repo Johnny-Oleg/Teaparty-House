@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tilt from 'react-parallax-tilt';
 
+import StarRating from './StarRating/StarRating';
 import './Jrpg.css';
 
-const Jrpg = ({ id, description }) => {
+const Jrpg = ({ id, description, rating }) => {
     console.log(description);
 
     return (
         <li className="top__list-item nes-container is-rounded">
             <Tilt 
                 className="list-item__img-wrapper"
-                options={{max : 40, perspective: 1000, easing: "cubic-bezier(.03,.98,.52,.99)"}} 
+                options={{ max : 40, perspective: 1000, easing: 'cubic-bezier(.03,.98,.52,.99)' }} 
                 /* style={{ height: 250, width: 250 }} */ 
             >
                 <img 
@@ -21,16 +22,16 @@ const Jrpg = ({ id, description }) => {
                 />   
             </Tilt>
             <div className="list-item__info">
+                <div className="nes-badge">
+                    <span className="is-success">{`${id}`}</span>
+                </div>
                 <h3 className="list-item__title">
-                    <span>{`${id}) `}</span>
+                    {/* <span>{`${id}) `}</span> */}
                     {`${description?.title}`}
                 </h3>
                 <div className="list-item__rating">
-                    <i class="nes-icon star"></i>
-                    <i class="nes-icon star"></i>
-                    <i class="nes-icon star"></i>
-                    <i class="nes-icon star"></i>
-                    <i class="nes-icon star is-empty"></i>
+                    <span className="item__rating-text">Rating</span>
+                    <StarRating id={id} rating={rating} />
                 </div>
             </div>
         </li>

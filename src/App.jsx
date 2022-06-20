@@ -82,15 +82,19 @@ const App = () => {
             <Video />
             <div className={`container `}>
                 <div className="section">
-                    <JrpgOfTheDay />
-                    <Player />
-                    <img src="./images/Sire.png" alt="sir" />
-                    <button className="btn" onClick={handleClick}>
-                        <span>Show Users</span>
-                    </button>
-                    <br />
-                    <span>Total users: {countUsers}</span>
-                    <img src="./images/BLM.gif" alt="blm" />
+                    <div className="selection__content">
+                        <JrpgOfTheDay />
+                        <Player />
+                    </div>
+                    <div className="selection__inner">
+                        <img src="./images/Sire.png" alt="sir" />
+                        <button className="nes-btn is-primary" onClick={handleClick}>
+                            Show Users
+                        </button>
+                        <br />
+                        <span>Total users: {countUsers}</span>
+                        <img src="./images/BLM.gif" alt="blm" />
+                    </div>
                 </div>
                 <div className="main">
                     <UsersOnline />

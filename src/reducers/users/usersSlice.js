@@ -18,6 +18,9 @@ export const usersSlice = createSlice({
         addNewUser: (state, action) => {
             state.users = [...state.users, { ...action.payload, id: findMaxId(state) }]
         },
+        addUserToFavorite: (state, action) => {
+
+        },
         addUserLike: (state, action) => {
             state.users = [
                 ...state.users.map(user => user.id === action.payload 
@@ -25,9 +28,16 @@ export const usersSlice = createSlice({
                     : user
                 )
             ]
+        },
+        addStarRating: (state, action) => {
+            const { id, stars } = action.payload;
+            console.log(id, stars);
         }
     }
 })
 
-export const { fetchUsers, addNewUser, addUserLike } = usersSlice.actions;
+export const { 
+    fetchUsers, addNewUser, addUserToFavorite, addUserLike, addStarRating 
+} = usersSlice.actions;
+
 export default usersSlice.reducer;
