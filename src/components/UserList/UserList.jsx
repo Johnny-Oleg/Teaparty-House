@@ -18,10 +18,10 @@ const UserList = () => {
     }
 
     const defaultOrder = users
-        .map((user, index) => <User key={user.id} {...user} />);
+        .map((user, index) => <User key={user.userId} {...user} />);
 
     const sortedOrder = sorted
-        .map((user, index) => <User key={user.id} {...user} />);
+        .map((user, index) => <User key={user.userId} {...user} />);
 
 
     return (
