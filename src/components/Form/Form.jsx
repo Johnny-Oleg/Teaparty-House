@@ -8,18 +8,18 @@ const Form = () => {
     const dispatch = useDispatch();
 
     const [newUser, setNewUser] = useState({
+        userId: '',
         name: '',
         avatar: '',
-        id: '',
         likes: 0,
         top: [],
-    });
+    })
 
     const handleChange = ({ target: { value } }) => {
         setNewUser({
+            userId: '', 
             name: value.trim(), 
             avatar: null ?? '/images/avatars/default-user.png', 
-            id: '', 
             likes: 0,
             top: [
                 {
@@ -28,6 +28,7 @@ const Form = () => {
                         title: 'Xenosaga Episode I: Der Wille zur Macht',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
                     id: 2,
@@ -35,6 +36,7 @@ const Form = () => {
                             title: 'Xenosaga Episode II: Jenseits von Gut und Böse',
                             art: null ?? '/images/user-demo.jpg',
                         },
+                        rating: 0
                 },
                 {
 
@@ -43,6 +45,7 @@ const Form = () => {
                         title: 'Xenosaga Episode III: Also Sprach Zarathustra',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
 
@@ -51,6 +54,7 @@ const Form = () => {
                         title: 'Xenogears',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
                     id: 5,
@@ -58,6 +62,7 @@ const Form = () => {
                         title: 'Xenoblade Chronicles',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
                     id: 6,
@@ -65,6 +70,7 @@ const Form = () => {
                         title: 'Final Fantasy X',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
                     id: 7,
@@ -72,6 +78,7 @@ const Form = () => {
                         title: 'Persona 3',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
                     id: 8,
@@ -79,6 +86,7 @@ const Form = () => {
                         title: 'Persona 5',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
                     id: 9,
@@ -86,6 +94,7 @@ const Form = () => {
                         title: '.hack//G.U.',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 },
                 {
                     id: 10,
@@ -93,9 +102,10 @@ const Form = () => {
                         title: 'Infinite Undiscovery',
                         art: null ?? '/images/user-demo.jpg',
                     },
+                    rating: 0
                 }
             ]
-        });
+        })
     }
 
     const handleSubmit = e => {

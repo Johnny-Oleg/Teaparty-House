@@ -5,8 +5,8 @@ import Tilt from 'react-parallax-tilt';
 import StarRating from './StarRating/StarRating';
 import './Jrpg.css';
 
-const Jrpg = ({ id, description, rating }) => {
-    console.log(description);
+const Jrpg = ({ userId, id, description, rating }) => {
+    // console.log(description);
 
     return (
         <li className="top__list-item nes-container is-rounded">
@@ -26,12 +26,11 @@ const Jrpg = ({ id, description, rating }) => {
                     <span className="is-success">{`${id}`}</span>
                 </div>
                 <h3 className="list-item__title">
-                    {/* <span>{`${id}) `}</span> */}
                     {`${description?.title}`}
                 </h3>
                 <div className="list-item__rating">
                     <span className="item__rating-text">Rating</span>
-                    <StarRating id={id} rating={rating} />
+                    <StarRating userId={userId} id={id} rating={rating} />
                 </div>
             </div>
         </li>

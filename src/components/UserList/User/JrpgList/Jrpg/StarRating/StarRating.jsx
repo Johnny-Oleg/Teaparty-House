@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { addStarRating } from '../../../../../../reducers/users/usersSlice';
 import './StarRating.css';
 
-const StarRating = ({ id, rating }) => {
+const StarRating = ({ userId, id, rating }) => {
 	const [starRating, setStarRating] = useState(rating);
     const [hover, setHover] = useState(0);
     const [clicked, setClicked] = useState(false);
@@ -21,7 +21,7 @@ const StarRating = ({ id, rating }) => {
 
 		setStarRating(stars);
 		setClicked(true);
-		dispatch(addStarRating({ id, stars }));
+		dispatch(addStarRating({ userId, id, stars }));
 	}
 	
 	return (

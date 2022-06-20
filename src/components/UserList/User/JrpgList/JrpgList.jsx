@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import Jrpg from './Jrpg/Jrpg';
 
-const JrpgList = ({ top }) => {
+const JrpgList = ({ userId, top }) => {
     return (
         <ul className="user-top__list">
-            {top.map(jrpg => <Jrpg key={jrpg.id} {...jrpg} />)}
+            {top.map(jrpg => <Jrpg key={jrpg.id} userId={userId} {...jrpg} />)}
         </ul>
     )
 }

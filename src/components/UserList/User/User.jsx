@@ -7,24 +7,24 @@ import { addUserLike } from '../../../reducers/users/usersSlice';
 import JrpgList from './JrpgList/JrpgList';
 import './User.css';
 
-const User = ({ name, avatar, id, likes, top }) => {
+const User = ({ userId, name, avatar, likes, top }) => {
     //? const [counter, setCounter] = useState(likes);
     // const [color, setColor] = useState({color: '', clicked: false}); //TODO
     const [clicked, setClicked] = useState(false); //TODO
     const [visibleList, setVisible] = useState(false);
     const dispatch = useDispatch();
 
-    const handleLike = id => {
-        console.log(`id: ${id}`, likes, clicked);
+    const handleLike = userId => {
+        console.log(`userId: ${userId}`, likes, clicked);
 
-        !clicked && setClicked(true);
+        setClicked(true);
 
-        dispatch(addUserLike(id));
+        dispatch(addUserLike(userId));
     }
     
     useEffect(() => {
-        console.log(`id: ${id}`, likes);
-    }, [id, likes])
+        console.log(`userId: ${userId}`, likes);
+    }, [userId, likes])
 
     const handleClick = () => setVisible(visible => !visible);
     
@@ -42,10 +42,10 @@ const User = ({ name, avatar, id, likes, top }) => {
                     </h3>
                     <div
                         className="user__btn"
-                        onClick={() => handleLike(id)} 
+                        onClick={() => handleLike(userId)} 
                     >
                         <span className="user__btn-text">Favorite</span>
-                        {clicked 
+                        {clicked || likes > 0 
                             ? <i className="nes-icon heart"></i>
                             : <i className="nes-icon is-empty heart"></i>
                         }
@@ -53,10 +53,10 @@ const User = ({ name, avatar, id, likes, top }) => {
                     </div>
                     <div
                         className="user__btn"
-                        onClick={() => handleLike(id)} 
+                        onClick={() => handleLike(userId)} 
                     >
                         <span className="user__btn-text">Likes</span>
-                        {clicked 
+                        {clicked || likes > 0 
                             ? <i className="nes-icon like"></i>
                             : <i className="nes-icon is-empty like"></i>
                         }
@@ -75,10 +75,10 @@ const User = ({ name, avatar, id, likes, top }) => {
                     className="user__btn"
                     fontSize="small" 
                     style={color} 
-                    onClick={() => handleLike(id)} 
+                    onClick={() => handleLike(userId)} 
                 /> */}
 
-                {visibleList && <JrpgList top={top} />}
+                {visibleList && <JrpgList userId={userId} top={top} />}
             </div>
         </li>
     )
@@ -87,7 +87,7 @@ const User = ({ name, avatar, id, likes, top }) => {
 User.propTypes = {
     name: PropTypes.string,
     avatar: PropTypes.string,
-    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     top: PropTypes.arrayOf(PropTypes.object),
 }
 
